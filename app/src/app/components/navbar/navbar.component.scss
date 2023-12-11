@@ -1,0 +1,119 @@
+*{
+
+  box-sizing: border-box;
+
+}
+
+.nav-logo{
+
+  height: 80px;
+
+}
+
+.hamburger-btn{
+
+  background-color: transparent;
+  border: none;
+  font-size: 2.4rem;
+  padding: 0;
+
+  &:hover{
+
+    background-color: transparent;
+
+  }
+
+}
+
+.ham-icon{
+
+  color: var(--verdeScuro);
+  transition: .2s linear;
+
+  &:hover{
+
+    color: var(--aranGiallo);
+
+  }
+
+
+}
+
+.ricette-btn{
+
+  background-color: var(--aranGialloLight);
+  border-radius: 40px;
+
+  &:hover{
+
+    background-color: var(--aranGialloMedium);
+
+  }
+
+}
+
+.input-recipe{
+
+  border-radius: 40px;
+  border: 2px solid var(--verdeScuro);
+  cursor: pointer;
+  transition: .2s linear;
+
+  &::placeholder{
+
+    color: var(--verdeScuro);
+
+  }
+
+  &:hover{
+
+    background-color: var(--aranGialloLight);
+
+  }
+
+  &:focus{
+
+    outline: 2px solid var(--aranGiallo);
+
+  }
+
+}
+
+.input-recipe{
+
+  width: calc(100vw - 460px);
+
+}
+.search-btn{
+
+  border-radius: 40px;
+  background-color: var(--aranGialloLight);
+  border: none;
+  transition: .2s linear;
+
+
+  &:hover{
+
+    color: var(--aranGiallo);
+
+  }
+
+}
+
+.accedi-btn{
+
+  background-color: var(--verdeScuro);
+  padding: 10px;
+  border-radius: 40px;
+  text-decoration: none;
+  color: white;
+  transition: .2s linear;
+
+  &:hover{
+
+    background-color: var(--aranGiallo);
+
+  }
+
+
+}
