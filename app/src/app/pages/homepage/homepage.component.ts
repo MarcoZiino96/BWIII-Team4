@@ -25,7 +25,7 @@ export class HomepageComponent {
 
   getImgByCategories(categoria: string): string {
     switch (categoria.toLowerCase()) {
-      case 'Antipasto ':
+      case 'Antipasto':
         return '../../../assets/img/copertine.png';
       case 'Pollame':
         return '../../../assets/img/copertine.png';
