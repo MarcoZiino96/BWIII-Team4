@@ -1,1 +1,38 @@
-<p>navbar works!</p>
+<nav class="navbar navbar-expand-md bg-body-tertiary">
+  <button class="btn btn-primary mx-3 hamburger-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="bi bi-list ham-icon"></i></button>
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+  </div>
+</div>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img class="nav-logo" src="../../../assets/recipeme-logo.png" alt="logo"></a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle ricette-btn px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Ricette
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2 input-recipe" type="search" placeholder="Cerca una ricetta" aria-label="Search">
+        <button class="btn btn-outline-success search-btn px-4" type="submit"><i class="bi bi-search src-icon"></i></button>
+      </form>
+      <div>
+
+        <a class="ms-2 accedi-btn px-4" href="#"><i class="bi bi-person-circle"></i></a>
+
+      </div>
+    </div>
+  </div>
+</nav>
