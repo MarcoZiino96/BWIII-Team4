@@ -9,7 +9,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomepageModule } from './pages/homepage/homepage.module';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
