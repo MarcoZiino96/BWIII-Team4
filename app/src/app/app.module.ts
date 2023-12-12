@@ -7,6 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomepageModule } from './pages/homepage/homepage.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HomepageModule } from './pages/homepage/homepage.module';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HomepageModule
+    HomepageModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
