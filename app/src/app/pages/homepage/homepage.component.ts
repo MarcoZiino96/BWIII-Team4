@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { APIricetteService } from '../../services/apiricette.service';
+import { iRicetta } from '../../Models/iricetta';
 
 
 @Component({
@@ -11,9 +12,15 @@ export class HomepageComponent {
 
   constructor(private apiScv: APIricetteService) { }
 
-  ngOnInit() {
-    this.apiScv.getAll().subscribe
-  }
+  ricetteArr:iRicetta[] = [];
+
+
+  // ngOnInit() {
+  //   this.apiScv.getAll().subscribe(data=> {
+  //     this.ricetteArr.push(data);
+  //   }
+  //   )
+  // }
 
   getImgByCategories(categoria: string): string {
     switch (categoria.toLowerCase()) {
@@ -32,11 +39,6 @@ export class HomepageComponent {
       default:
         return '';
     }
-  }
-
-  onSplideInit(splide:Event)
-  {
-  console.log(splide);
   }
 
 
