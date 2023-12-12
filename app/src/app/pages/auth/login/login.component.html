@@ -9,21 +9,21 @@
       <div class="row d-flex justify-content-center">
         <div class="col-lg-8">
           <h2 class="fw-bold mb-5 login-h2">Effettua l'accesso a RecipeMe</h2>
-          <form>
+          <form [formGroup]="loginForm">
 
             <!-- Email input -->
             <div class="form-outline mb-1">
-              <label class="form-label" for="form3Example3">Indirizzo e-mail</label>
-              <input type="email" id="form3Example3" class="form-control is-invalid" />
+              <label class="form-label" for="email">Indirizzo e-mail</label>
+              <input type="email" id="email" [ngClass]="{'form-control': true, 'is-valid': isValid('email'), 'is-invalid': isInvalid('email')}" formControlName="email" />
             </div>
-            <div class="feedback text-start ps-3 mb-2 valid">Prova</div>
+            <div class="feedback text-start ps-3 mb-2"><span *ngIf="loginForm.controls['email'].dirty" [ngClass]="{ 'valid': isValid('email'), 'invalid': isInvalid('email')}">{{msg.email}}</span></div>
 
             <!-- Password input -->
             <div class="form-outline mb-1">
-              <label class="form-label" for="form3Example4">Password</label>
-              <input type="password" id="form3Example4" class="form-control" />
+              <label class="form-label" for="password">Password</label>
+              <input type="password" id="password" [ngClass]="{'form-control': true, 'is-valid': isValid('password'), 'is-invalid': isInvalid('password')}" formControlName="password" />
             </div>
-            <div class="feedback text-start ps-3 mb-2 valid">Prova</div>
+            <div class="feedback text-start ps-3 mb-2"><span *ngIf="loginForm.controls['password'].dirty" [ngClass]="{ 'valid': isValid('password'), 'invalid': isInvalid('password')}">{{msg.password}}</span></div>
 
             <!-- Submit button -->
             <button type="submit" class="btn btn-primary btn-block mb-4 btn-accedi">

@@ -61,7 +61,8 @@ export class HomepageComponent {
 // }
 
 // getCategory(){
-//   this.ap
+//   this.apiScv.getAllCat().subscribe(cat => {}
+
 // }
 
 }
