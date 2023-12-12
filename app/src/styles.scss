@@ -9,4 +9,25 @@
   --aranGialloMedium:rgba(247, 197, 60, 0.592);
   --aranGialloLight:rgba(247, 197, 60, 0.302);
   --bs-tertiary-bg-rgb: white;
+  --invalidColor: rgb(147, 0, 0);
+  --validColor: rgb(0, 109, 0);
 }
+
+.feedback{
+
+  min-height: 24px;
+
+}
+
+.valid{
+
+  color: var(--bs-form-valid-border-color);
+
+}
+
+.invalid{
+
+  color: var(--bs-form-invalid-border-color);
+
+}
+

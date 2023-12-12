@@ -1,0 +1,71 @@
+.bg-image{
+
+  background-image: url('https://www.irishexaminer.com/cms_media/module_img/7371/3685507_9_seoimage2x1_Collage_Maker-31-Jul-2023-08-33-AM-604.jpg');
+  height: 300px;
+  background-size: contain;
+
+}
+
+.card-style{
+
+  margin-top: -100px;
+  background: hsla(0, 0%, 100%, 0.8);
+  backdrop-filter: blur(30px);
+
+}
+
+.btn-accedi, .btn-register{
+
+  background-color: var(--verdeScuro);
+  border-radius: 40px;
+  border: 1px solid var(--aranGialloLight);
+
+  &:hover{
+
+    background-color: var(--aranGiallo);
+
+  }
+
+}
+
+.login-h2, .form-label, .or-text{
+
+  color: var(--verdeScuro);
+
+}
+
+input{
+
+  border-radius: 40px;
+  border: 2px solid var(--verdeScuro);
+  cursor: pointer;
+  transition: .2s linear;
+
+  &::placeholder{
+
+    color: var(--verdeScuro);
+
+  }
+
+  &:hover{
+
+    background-color: var(--aranGialloLight);
+
+  }
+
+  &:focus{
+
+    outline: 2px solid var(--aranGiallo);
+
+  }
+
+}
+
+.form-label{
+
+  margin-top: 5px;
+
+}
+
+
+
