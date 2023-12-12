@@ -39,10 +39,10 @@ export class AuthService {
   signUp(register: iRegister): Observable<iAuthData> {
     return this.http.post<iAuthData>(`${this.endpoint}/register`, register).pipe(tap(res => {
       this.http.post<iPermissions>(`${this.endpoint}/permissions`,
-      {
-        userId: res.user.id,
-        isAdmin: false
-      })
+        {
+          userId: res.user.id,
+          isAdmin: false
+        })
     }))
   }
 
