@@ -44,10 +44,12 @@ export class RegisterComponent {
   msg!: iRegister
 
   unmatch: boolean = false
+  match: boolean = false
 
 
 
   ngDoCheck() {
+
     this.errorMsg = {
       name: this.setInvalidMessages('name'),
       surname: this.setInvalidMessages('surname'),
@@ -64,10 +66,16 @@ export class RegisterComponent {
       confirmPassword: ''
     }
 
-    if (this.registerForm.controls['confirmPassword'].value !== this.registerForm.controls['password'].value && !this.registerForm.controls['confirmPassword'].dirty) {
+    if (this.registerForm.controls['confirmPassword'].value !== this.registerForm.controls['password'].value && this.registerForm.controls['confirmPassword'].dirty) {
       this.unmatch = true
     } else {
       this.unmatch = false
+    }
+
+    if (this.registerForm.controls['confirmPassword'].value === this.registerForm.controls['password'].value && this.registerForm.controls['confirmPassword'].dirty) {
+      this.match = true
+    } else {
+      this.match = false
     }
 
     if (this.errorMsg.name) {
@@ -108,6 +116,11 @@ export class RegisterComponent {
 
   isUnmatched(): boolean {
     return this.unmatch && this.registerForm.controls['confirmPassword'].dirty
+  }
+
+
+  ngOnInit() {
+    console.log(this.unmatch)
   }
 
 
