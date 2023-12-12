@@ -14,9 +14,11 @@ export class APIricetteService {
   getAll(): Observable<iRicetta[]> {
     return this.http.get<iRicetta[]>(environment.apiUrl)
   }
+
   getByCat(categoria: string): Observable<iRicetta[]> | undefined {
     return this.http.get<iRicetta[]>(`${environment.apiUrl}?categoria=${categoria}`)
   }
+
   getAllCat(): Observable<string[]> {
     return this.getAll().pipe(map(res => {
       const categories: string[] = []
