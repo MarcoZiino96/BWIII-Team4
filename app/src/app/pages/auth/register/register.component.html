@@ -54,9 +54,9 @@
               </div>
               <div class="col-md-6 form-outline mb-4">
                 <label class="form-label" for="form3Example4">Conferma password</label>
-                <input type="password" id="confirmPassword" class="form-control mb-1" formControlName="confirmPassword" [ngClass]="{'form-control': true, 'is-valid': !isUnmatched(), 'is-invalid': isUnmatched()}" />
+                <input type="password" id="confirmPassword" class="form-control mb-1" formControlName="confirmPassword" [ngClass]="{'form-control': true, 'is-valid': match, 'is-invalid': unmatch}" />
                 <div class="feedback text-start ps-3 mb-2 valid">
-                  <span *ngIf="registerForm.controls['confirmPassword'].dirty" [ngClass]="{ 'valid': isValid('confirmPassword'), 'invalid': isInvalid('confirmPassword') }">{{msg.confirmPassword}}</span>
+                  <span *ngIf="registerForm.controls['confirmPassword'].dirty" [ngClass]="{ 'valid': !unmatch, 'invalid': unmatch }">{{msg.confirmPassword}}</span>
                 </div>
               </div>
             </div>
