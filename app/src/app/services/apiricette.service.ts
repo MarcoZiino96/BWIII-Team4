@@ -29,7 +29,7 @@ export class APIricetteService {
     }))
   }
   searchByName(query: string, limit: number): Observable<iRicetta[]> {
-    return this.http.get<iRicetta[]>(`${environment.apiUrl}/ricette?nome_like=${query}&_limit=${limit}`)
+    return this.http.get<iRicetta[]>(`${environment.apiUrl}?nome_like=${query}&_limit=${limit}`)
   }
 
   create(ricetta:Partial<iRicetta>) : Observable<iRicetta>{
