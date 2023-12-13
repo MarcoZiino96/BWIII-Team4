@@ -21,19 +21,20 @@ export class HomepageComponent {
 
 
 
-  // ngOnInit() {
-  //   this.apiScv.getAll().subscribe(data => {
-  //     this.ricetteArr = data.slice(0, 30);
+  ngOnInit() {
+    this.apiScv.getAll().subscribe(data => {
+      this.ricetteArr = data.slice(0, 30);
+      })
 
-  //     })
+  }
 
 
   //     }
-  ngOnInit() {
-    this.apiScv.getAll().subscribe(data => {
-      this.ricetteArr = data;
-    });
-  }
+  // ngOnInit() {
+  //   this.apiScv.getAll().subscribe(data => {
+  //     this.ricetteArr = data;
+  //   });
+  // }
 
 
 
@@ -61,4 +62,6 @@ export class HomepageComponent {
         return 'https://picsum.photos/200/300?random=1';
     }
   }
-  }
+
+
+}
