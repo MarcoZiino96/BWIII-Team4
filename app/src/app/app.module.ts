@@ -33,7 +33,7 @@ registerLocaleData(it);
     FormsModule,
     BrowserAnimationsModule,
     NzAutocompleteModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [

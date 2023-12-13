@@ -3,8 +3,7 @@ import { iRicetta } from '../../Models/iricetta';
 import { FormBuilder, FormControl } from '@angular/forms';
 import { APIricetteService } from '../../services/apiricette.service';
 import { Router } from '@angular/router';
-import { Component } from '@angular/core';
-import { APIricetteService } from '../../services/apiricette.service';
+
 
 @Component({
   selector: '.app-navbar',
