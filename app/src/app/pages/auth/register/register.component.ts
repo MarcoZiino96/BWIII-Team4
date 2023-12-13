@@ -57,7 +57,7 @@ export class RegisterComponent {
       password: this.setInvalidMessages('password'),
       confirmPassword: (this.registerForm.controls['confirmPassword'].value !== this.registerForm.controls['password'].value) && (this.registerForm.controls['confirmPassword'].dirty) ? 'Mancata corrispondenza' : this.setInvalidMessages('confirmPassword')
     }
-    console.log(this.registerForm)
+
     this.msg = {
       email: '',
       password: '',
