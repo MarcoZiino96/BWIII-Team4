@@ -26,5 +26,8 @@ export class APIricetteService {
       return categories
     }))
   }
+  searchByName(query: string, limit: number): Observable<iRicetta[]> {
+    return this.http.get<iRicetta[]>(`${environment.apiUrl}/ricette?nome_like=${query}&_limit=${limit}`)
+  }
 
 }
