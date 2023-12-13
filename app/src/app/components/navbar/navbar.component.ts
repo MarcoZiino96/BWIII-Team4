@@ -83,16 +83,4 @@ export class NavbarComponent {
     })
   }
 
-  ricetteArr:iRicetta[] = [];
-
-
-
-
-  ngOnInit(){
-    this.apiSvc.getAll().subscribe(data =>{
-      this.ricetteArr = data
-      console.log(this.ricetteArr)
-    })
-  }
-
 }
