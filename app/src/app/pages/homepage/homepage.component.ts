@@ -19,16 +19,32 @@ export class HomepageComponent {
   ricetteArrBevande: iRicetta[] = [];
 
 
-
-
   ngOnInit() {
+
     this.apiScv.getAll().subscribe(data => {
-      this.ricetteArr = data.slice(0, 30);
-
-
-      })
+      this.ricetteArr = data;
+    });
+    this.apiScv.getByCat('Primo')?.subscribe(data1=>{
+      this.ricetteArrPrimo = data1;
+      console.log(this.ricetteArrPrimo);
+    });
+    this.apiScv.getByCat('Contorno')?.subscribe(data2=>{
+      this.ricetteArrContorno = data2;
+    });
+    this.apiScv.getByCat('Dessert')?.subscribe(data3=>{
+      this.ricetteArrDessert = data3;
+    });
+    this.apiScv.getByCat('Bevande')?.subscribe(data4=>{
+      this.ricetteArrBevande = data4;
+    });
 
   }
+
+
+
+
+
+
 
 
 
@@ -48,11 +64,14 @@ export class HomepageComponent {
         return '../../../assets/img/salse.png';
       case 'Contorno':
         return '../../../assets/img/contorno.png';
-      case 'Primo':
+      case 'Dessert':
+        return '../../../assets/img/dessert.png';
+        case 'Primo':
         return '../../../assets/img/primo.png';
       default:
         return 'https://picsum.photos/200/300?random=1';
     }
   }
+
 
 }
