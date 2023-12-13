@@ -5,7 +5,12 @@
   text-align: center;
   width: 100%;
   transform: translate(-50%);
-  color: var(--aranGiallo);
+  color: white;
+  text-shadow:
+    1px 1px 0 var(--aranGiallo),
+    -1px 1px 0 var(--aranGiallo),
+    -1px -1px 0 var(--aranGiallo),
+    1px -1px 0 var(--aranGiallo);
 }
 
 .containerImgCard {
@@ -28,6 +33,24 @@
   text-align: center;
   font-size: 2rem;
   width: 100%;
+  }
+
+}
+
+.nav2-text{
+
+  font-weight: bold;
+
+  a{
+
+    color: var(--verdeScuro);
+
+    &:hover{
+
+      color: green;
+
+    }
+
   }
 
 }
