@@ -18,12 +18,12 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-lg-0">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle ricette-btn px-3" href="#" role="button" data-bs-toggle="dropdown"
+            <a (click)="open =!open" [ngClass]="{show: open}" class="nav-link dropdown-toggle ricette-btn px-3" href="#" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
               Ricette
             </a>
-            <ul class="dropdown-menu">
-              <!-- <li><a class="dropdown-item" [routerLink]="['/homepage/result',r.id]">Primi</a></li> -->
+            <ul [ngClass]="{show: open}" class="dropdown-menu" *ngFor="let r of ricetteArr">
+              <li><a class="dropdown-item" [routerLink]="['/homepage/result',r.categoria]">{{r.categoria}}</a></li>
             </ul>
           </li>
         </ul>

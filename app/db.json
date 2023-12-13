@@ -31,6 +31,13 @@
       "phoneNumber": "+1 (379) 918-2487",
       "dateOfBirth": "1973-08-14",
       "id": 4
+    },
+    {
+      "email": "mauro@cassoni.it",
+      "password": "$2a$10$ZyxU.VxBnX1X3Sb2jtXJGexdjltuaN/WFVDtdWxDSSS1wVHorkWK.",
+      "name": "Mauro",
+      "surname": "Cassoni",
+      "id": 5
     }
   ],
   "permissions": [
@@ -48,6 +55,11 @@
       "userId": 3,
       "isAdmin": false,
       "id": 3
+    },
+    {
+      "userId": 5,
+      "isAdmin": false,
+      "id": 4
     }
   ],
   "ricette": [
