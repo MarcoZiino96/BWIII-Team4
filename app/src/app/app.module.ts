@@ -29,11 +29,12 @@ registerLocaleData(it);
     AppRoutingModule,
     NgbModule,
     HomepageModule,
-    HttpClientModule,
+    NgxSplideModule,
     FormsModule,
     BrowserAnimationsModule,
     NzAutocompleteModule,
     ReactiveFormsModule
+    HttpClientModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: it_IT },

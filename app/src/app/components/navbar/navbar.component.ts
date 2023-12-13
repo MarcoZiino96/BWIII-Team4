@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 import { Component, ViewChild } from '@angular/core';
 import { iRicetta } from '../../Models/iricetta';
 import { FormBuilder, FormControl } from '@angular/forms';
 import { APIricetteService } from '../../services/apiricette.service';
 import { Router } from '@angular/router';
+=======
+import { Component } from '@angular/core';
+import { APIricetteService } from '../../services/apiricette.service';
+>>>>>>> d76e6d0231f5dda5bbc1cbbb75a490ed8e3ce24f
 
 @Component({
   selector: '.app-navbar',
@@ -68,5 +73,7 @@ export class NavbarComponent {
       }
   }
 
+
+  constructor(private apiSvc:APIricetteService){}
 
 }
