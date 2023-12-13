@@ -1,6 +1,10 @@
 {
-  "users": [],
-  "permissions": [],
+  "users": [
+
+  ],
+  "permissions": [
+
+  ],
   "ricette": [
     {
       "id": 4,
