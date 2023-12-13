@@ -20,6 +20,17 @@
       "name": "Ludovico",
       "surname": "Einaudi",
       "id": 3
+    },
+    {
+      "email": "gcm@gm.gm",
+      "password": "$2a$10$nBdfrvhqm5vMjeA.FZ7DzetUv1eQqtV8bT/MYxtvRga4CZY5fDOLe",
+      "name": "Ira Simon",
+      "surname": "Casey",
+      "confirmPassword": "password1234",
+      "gender": "F",
+      "phoneNumber": "+1 (379) 918-2487",
+      "dateOfBirth": "1973-08-14",
+      "id": 4
     }
   ],
   "permissions": [
