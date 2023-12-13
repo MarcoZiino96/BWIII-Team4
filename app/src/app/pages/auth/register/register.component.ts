@@ -164,8 +164,8 @@ export class RegisterComponent {
   }
 
   register(): void {
-    if (this.registerForm.valid) {
-      const registerData: any = {...this.registerForm.value}
+    if (this.registerForm.valid && this.match) {
+      const registerData: any = { ...this.registerForm.value }
       delete registerData.confirmPassword
       this.authSvc.signUp(registerData).subscribe(
         res => {

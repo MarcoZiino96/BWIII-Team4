@@ -1,4 +1,4 @@
-export interface iResgisterData {
+export interface iRegisterData {
   name: string
   surname: string
   email: string

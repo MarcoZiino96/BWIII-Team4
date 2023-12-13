@@ -1,9 +1,43 @@
 {
   "users": [
-
+    {
+      "email": "vobenaw@mailinator.com",
+      "password": "$2a$10$6Ix2Z.QhAk8tHv4/j59x0.sC6mvW9MLI8azhZUvfE9LbfRH.NRz5y",
+      "name": "Oleg Hays",
+      "surname": "Mitchell",
+      "id": 1
+    },
+    {
+      "email": "gm@gm.gm",
+      "password": "$2a$10$jMs2fhOwO1MZ9ORyJ8sHae1vSuRdxF5LWmcjJLK9/hm54GDYQkzUy",
+      "name": "Giulio Camillo",
+      "surname": "Marinelli",
+      "id": 2
+    },
+    {
+      "email": "ludovico.einaudi@libero.it",
+      "password": "$2a$10$RpFqnGliqtptNFBKI0Z.Y.OizXrFhRZorD/ncrxQcp7XLMJcLFra.",
+      "name": "Ludovico",
+      "surname": "Einaudi",
+      "id": 3
+    }
   ],
   "permissions": [
-
+    {
+      "userId": 1,
+      "isAdmin": false,
+      "id": 1
+    },
+    {
+      "userId": 2,
+      "isAdmin": false,
+      "id": 2
+    },
+    {
+      "userId": 3,
+      "isAdmin": false,
+      "id": 3
+    }
   ],
   "ricette": [
     {
