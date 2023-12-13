@@ -2,7 +2,7 @@
 
   <splide class="splide" [options]="{ type: 'loop', perPage: 5, autoplay: true, lazyLoad: true, height: 500, autoWidth: true, gap: 15,  }">
     <splide-slide *ngFor="let r of ricetteArr" class="containerImgCard">
-      <img class="imgCard" [src]="getImgByCategories(r.categoria)" alt="Immagine Ricetta" />
+      <img loading="lazy" class="imgCard" [src]="getImgByCategories(r.categoria)" alt="Immagine Ricetta" />
       <h3 class="titoloCard">{{ r.nome }}</h3>
     </splide-slide>
   </splide>
@@ -20,8 +20,8 @@
   </div>
 
   <splide class="splide" [options]="{ type: 'loop', perPage: 5, autoplay: true, lazyLoad: true, height: 500, autoWidth: true, gap: 15,  }">
-    <splide-slide *ngFor="let r of ricetteArrPrimo" class="containerImgCard">
-      <img class="imgCard" [src]="getImgByCategories(r.categoria)" alt="Immagine Ricetta" />
+    <splide-slide *ngFor="let r of ricetteArr" class="containerImgCard">
+      <img loading="lazy" class="imgCard" [src]="getImgByCategories(r.categoria)" alt="Immagine Ricetta" />
       <h3 class="titoloCard">{{ r.nome }}</h3>
     </splide-slide>
   </splide>
