@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgxSplideModule } from 'ngx-splide';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,6 +35,8 @@ registerLocaleData(it);
   ],
   providers: [
     { provide: NZ_I18N, useValue: it_IT }
+    NgxSplideModule,
+    HttpClientModule
   ],
   bootstrap: [AppComponent]
 })

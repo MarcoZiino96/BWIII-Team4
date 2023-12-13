@@ -14,9 +14,11 @@ export class APIricetteService {
   getAll(): Observable<iRicetta[]> {
     return this.http.get<iRicetta[]>(environment.apiUrl)
   }
+
   getByCat(categoria: string): Observable<iRicetta[]> | undefined {
     return this.http.get<iRicetta[]>(`${environment.apiUrl}?categoria=${categoria}`)
   }
+
   getAllCat(): Observable<string[]> {
     return this.getAll().pipe(map(res => {
       const categories: string[] = []
@@ -28,6 +30,22 @@ export class APIricetteService {
   }
   searchByName(query: string, limit: number): Observable<iRicetta[]> {
     return this.http.get<iRicetta[]>(`${environment.apiUrl}/ricette?nome_like=${query}&_limit=${limit}`)
+  }
+
+  create(ricetta:Partial<iRicetta>) : Observable<iRicetta>{
+    return this.http.post<iRicetta>(environment.apiUrl,ricetta)
+  }
+
+  update(ricetta:iRicetta) : Observable<iRicetta>{
+    return this.http.put<iRicetta>(`${environment.apiUrl}/${ricetta.id}`,ricetta)
+  }
+
+  delete(id:number) : Observable <iRicetta> | undefined{
+    return this.http.delete<iRicetta>(`${environment.apiUrl}/${id}`)
+  }
+
+  getById(id:number) : Observable<iRicetta>{
+    return this.http.get<iRicetta>(`${environment.apiUrl}/${id}`)
   }
 
 }
