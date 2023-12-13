@@ -1,10 +1,9 @@
-.titoloCard {
+.titoloCard,.titoloCard2 {
   position: absolute;
   top: 46%;
   left: -3%;
   text-align: center;
   width: 100%;
-  transform: translate(-50%);
   color: white;
   text-shadow:
     1px 1px 0 var(--aranGiallo),
@@ -23,12 +22,7 @@
 }
 
 .titoloCard2{
-  position: absolute;
   top: 70%;
-  left: -3%;
-  text-align: center;
-  width: 100%;
-  color: var(--aranGiallo);
 }
 
 .imgCard2 {
@@ -44,9 +38,7 @@
 
   .titoloCard{
   top: 70%;
-  text-align: center;
   font-size: 2rem;
-  width: 100%;
   }
 
   .titoloCard2 {

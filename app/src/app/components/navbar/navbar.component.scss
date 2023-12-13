@@ -4,6 +4,14 @@
 
 }
 
+.mioFixed{
+  height: 100px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  background-color: white;
+  }
+
 .nav-logo{
 
   height: 80px;

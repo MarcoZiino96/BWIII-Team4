@@ -35,7 +35,7 @@ registerLocaleData(it);
     HttpClientModule
   ],
   providers: [
-    { provide: NZ_I18N, useValue: it_IT }
+    { provide: NZ_I18N, useValue: it_IT },
     NgxSplideModule,
     HttpClientModule
   ],
