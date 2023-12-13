@@ -49,7 +49,7 @@ export class RegisterComponent {
 
 
   ngDoCheck() {
-
+    console.log(this.registerForm)
     this.errorMsg = {
       name: this.setInvalidMessages('name'),
       surname: this.setInvalidMessages('surname'),
@@ -108,21 +108,27 @@ export class RegisterComponent {
       this.msg.confirmPassword = 'Le due password combaciano'
     }
 
-
+    if (this.registerForm.controls['email'].value !== null) (this.registerForm.controls['email'].markAsDirty())
 
 
     this.valid = this.registerForm['valid']
+
+
+
+
   }
+
+
+
 
   isUnmatched(): boolean {
     return this.unmatch && this.registerForm.controls['confirmPassword'].dirty
   }
 
 
-  ngOnInit() {
-    console.log(this.unmatch)
-  }
 
+
+  registered: boolean = false
 
   setInvalidMessages(fieldName: string): string {
     const field: AbstractControl | null = this.registerForm.get(fieldName)
@@ -157,19 +163,15 @@ export class RegisterComponent {
     return !this.registerForm.get(fieldName)?.valid && this.registerForm.get(fieldName)?.dirty
   }
 
-  logIn(): void {
-    if (this.registerForm.valid) {
-      this.authSvc.logIn(this.registerForm.value).subscribe(
-
+  register(): void {
+    if (this.registerForm.valid && this.match) {
+      const registerData: any = { ...this.registerForm.value }
+      delete registerData.confirmPassword
+      this.authSvc.signUp(registerData).subscribe(
         res => {
-          if (this.router.url === '/') this.router.navigate(['/my-gmeteo'])
-        },
-        err => {
-          this.valid = false
-          if (err.status === 400 && err.error === "Cannot find user") {
-            this.showModal1()
-          } else {
-            this.showModal2()
+          if (res) {
+            this.registered = true
+            this.authSvc.setUserPermissions(res.user.id).subscribe(perm => undefined)
           }
         }
       )
@@ -179,6 +181,9 @@ export class RegisterComponent {
           control.markAsDirty();
           control.updateValueAndValidity({ onlySelf: true });
         }
+        this.unmatch = false
+        this.match = false
+
       });
     }
   }

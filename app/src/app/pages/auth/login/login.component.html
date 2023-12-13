@@ -9,7 +9,7 @@
       <div class="row d-flex justify-content-center">
         <div class="col-lg-8">
           <h2 class="fw-bold mb-5 login-h2">Effettua l'accesso a RecipeMe</h2>
-          <form [formGroup]="loginForm">
+          <form [formGroup]="loginForm" (ngSubmit)="logIn()">
 
             <!-- Email input -->
             <div class="form-outline mb-1">
@@ -24,6 +24,7 @@
               <input type="password" id="password" [ngClass]="{'form-control': true, 'is-valid': isValid('password'), 'is-invalid': isInvalid('password')}" formControlName="password" />
             </div>
             <div class="feedback text-start ps-3 mb-2"><span *ngIf="loginForm.controls['password'].dirty" [ngClass]="{ 'valid': isValid('password'), 'invalid': isInvalid('password')}">{{msg.password}}</span></div>
+            <div class="feedback text-start ps-3 mb-2"><span class="invalid">{{serverMsg}}</span></div>
 
             <!-- Submit button -->
             <button type="submit" class="btn btn-primary btn-block mb-4 btn-accedi">

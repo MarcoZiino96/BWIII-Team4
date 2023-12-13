@@ -55,6 +55,7 @@ export class LoginComponent {
     this.valid = this.loginForm['valid']
   }
 
+  serverMsg: string = ''
 
   setInvalidMessages(fieldName: string): string {
     const field: AbstractControl | null = this.loginForm.get(fieldName)
@@ -90,14 +91,16 @@ export class LoginComponent {
       this.authSvc.logIn(this.loginForm.value).subscribe(
 
         res => {
-          if (this.router.url === '/') this.router.navigate(['/my-gmeteo'])
+          this.authSvc.isLoggedIn$.subscribe(res => console.log(res))
+          this.router.navigate(['/my-profile'])
         },
         err => {
+          console.log(err)
           this.valid = false
-          if (err.status === 400 && err.error === "Cannot find user") {
-            this.showModal1()
+          if (err.status === 400) {
+            this.serverMsg = 'Email e/o password errati!'
           } else {
-            this.showModal2()
+            this.serverMsg = 'Si è verificato un errore imprevisto'
           }
         }
       )
