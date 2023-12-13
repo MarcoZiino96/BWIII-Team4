@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { APIricetteService } from '../../services/apiricette.service';
 
 @Component({
   selector: '.app-navbar',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
 export class NavbarComponent {
 
   open:boolean = false;
+
+  constructor(private apiSvc:APIricetteService){}
 
 }

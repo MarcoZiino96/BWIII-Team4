@@ -1,10 +1,9 @@
-.titoloCard {
+.titoloCard,.titoloCard2 {
   position: absolute;
-  bottom: 45%;
-  left: 52%;
+  top: 46%;
+  left: -3%;
   text-align: center;
   width: 100%;
-  transform: translate(-50%);
   color: white;
   text-shadow:
     1px 1px 0 var(--aranGiallo),
@@ -19,9 +18,18 @@
 
 .imgCard {
   width: 320px;
-  // border: 3px solid var(--aranGiallo);
   box-shadow: 2px 2px 5px var(--aranGiallo);
 }
+
+.titoloCard2{
+  top: 70%;
+}
+
+.imgCard2 {
+  width: 300px;
+  box-shadow: 2px 2px 5px var(--aranGiallo);
+}
+
 
 @media screen and (min-width:500px){
   .imgCard{
@@ -29,10 +37,14 @@
   }
 
   .titoloCard{
-  bottom: 15%;
-  text-align: center;
+  top: 70%;
   font-size: 2rem;
-  width: 100%;
+  }
+
+  .titoloCard2 {
+    top: 68%;
+    left: 0;
+    font-size: 1.4rem;
   }
 
 }

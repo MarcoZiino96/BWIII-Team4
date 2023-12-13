@@ -28,6 +28,9 @@ export class APIricetteService {
       return categories
     }))
   }
+  searchByName(query: string, limit: number): Observable<iRicetta[]> {
+    return this.http.get<iRicetta[]>(`${environment.apiUrl}/ricette?nome_like=${query}&_limit=${limit}`)
+  }
 
   create(ricetta:Partial<iRicetta>) : Observable<iRicetta>{
     return this.http.post<iRicetta>(environment.apiUrl,ricetta)
@@ -43,6 +46,31 @@ export class APIricetteService {
 
   getById(id:number) : Observable<iRicetta>{
     return this.http.get<iRicetta>(`${environment.apiUrl}/${id}`)
+  }
+
+  getImgByCategories(categoria: string): string {
+    switch (categoria) {
+      case 'Antipasto':
+        return '../../../assets/img/antipasto.png';
+      case 'Pollame':
+        return '../../../assets/img/pollame.png';
+      case 'Pesce':
+        return '../../../assets/img/pesce.png';
+      case 'Carne':
+        return '../../../assets/img/carne.png';
+      case 'Bevande':
+        return '../../../assets/img/bevande.png';
+      case 'Salsa':
+        return '../../../assets/img/salse.png';
+      case 'Contorno':
+        return '../../../assets/img/contorno.png';
+      case 'Dessert':
+        return '../../../assets/img/dessert.png';
+        case 'Primo':
+        return '../../../assets/img/primo.png';
+      default:
+        return 'https://picsum.photos/200/300?random=1';
+    }
   }
 
 }

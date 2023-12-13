@@ -78,8 +78,7 @@ export class AuthService {
     const userJson: string | null = localStorage.getItem('authData')
     if (!userJson) return
     const accessData: iAuthData = JSON.parse(userJson)
-    if (this.jwtH.isTokenExpired(accessData.accessToken)) return
-    this.autoLogOut(accessData.accessToken)
+    if (this.jwtH.isTokenExpired(accessData.accessToken)) return this.autoLogOut(accessData.accessToken)
     this.authSubject.next(accessData)
 
   }
