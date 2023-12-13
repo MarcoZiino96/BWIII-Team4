@@ -23,14 +23,18 @@ export class NavbarComponent {
 
   onInput(event: Event): void {
     if (this.input.value) {
-      const api = this.apiSvc.searchByName(this.input.value, 6).subscribe(res => {
-        if (res.length !== 0) {
-          this.res = res
-          this.options = res.map(el => el.nome)
-        } else {
-          this.options = [`${this.input.value}`]
-        }
-      })
+      if (this.input.value.length >= 3) {
+        const api = this.apiSvc.searchByName(this.input.value, 6).subscribe(res => {
+          if (res.length !== 0) {
+            this.res = res
+            this.options = res.map(el => el.nome)
+          } else {
+            this.options = [`${this.input.value}... (nessun risultato)`]
+          }
+        })
+      } else {
+        this.options = []
+      }
     }
   }
 
@@ -39,6 +43,7 @@ export class NavbarComponent {
   @ViewChild('auto') element!: any
 
   actOnceWhenItemSelected: boolean = false
+
 
 
   open: boolean = false
