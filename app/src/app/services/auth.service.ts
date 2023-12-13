@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { iAuthData } from '../Models/auth/i-auth-data';
-import { BehaviorSubject, Observable, Subject, map, tap } from 'rxjs';
+import { BehaviorSubject, Observable, ObservableInput, Subject, catchError, map, tap, throwError } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { environment } from '../../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
 import { iRegister } from '../Models/auth/i-register';
 import { iPermissions } from '../Models/auth/i-permissions';
+import { iRegisterData } from '../Models/auth/i-register-data';
+
 
 @Injectable({
   providedIn: 'root'
@@ -36,14 +38,16 @@ export class AuthService {
     }))
   }
 
-  signUp(register: iRegister): Observable<iAuthData> {
-    return this.http.post<iAuthData>(`${this.endpoint}/register`, register).pipe(tap(res => {
-      this.http.post<iPermissions>(`${this.endpoint}/permissions`,
-        {
-          userId: res.user.id,
-          isAdmin: false
-        })
-    }))
+  signUp(register: iRegisterData): Observable<iAuthData> {
+    return this.http.post<iAuthData>(`${this.endpoint}/register`, register)
+  }
+
+  setUserPermissions(userId: number): Observable<iPermissions> {
+    return this.http.post<iPermissions>(`${this.endpoint}/permissions`,
+      {
+        userId: userId,
+        isAdmin: false
+      })
   }
 
   logIn(loginData: iAuthData): Observable<iAuthData> {
@@ -54,7 +58,8 @@ export class AuthService {
         this.isAdmin(data.user.id).pipe(tap(res => isAdmin = res))
         this.adminSubject.next(isAdmin)
         localStorage.setItem('authData', JSON.stringify(data))
-      }))
+      }
+      ))
   }
 
 
@@ -81,4 +86,10 @@ export class AuthService {
 
 
 
+
 }
+
+
+
+
+

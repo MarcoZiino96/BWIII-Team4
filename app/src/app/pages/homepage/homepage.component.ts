@@ -12,41 +12,47 @@ export class HomepageComponent {
 
   constructor(private apiScv: APIricetteService) { }
 
-  ricetteArr:iRicetta[] = [];
+  ricetteArr: iRicetta[] = [];
+  ricetteArrPrimo: iRicetta[] = [];
+  ricetteArrContorno: iRicetta[] = [];
+  ricetteArrDessert: iRicetta[] = [];
+  ricetteArrBevande: iRicetta[] = [];
+
+
 
 
   ngOnInit() {
-    this.apiScv.getAll().subscribe(data=> {
-      this.ricetteArr = data.slice (0, 30)
-    }
-    )
+    this.apiScv.getAll().subscribe(data => {
+      this.ricetteArr = data.slice(0, 30);
+
+
+      })
+
   }
+
+
 
   getImgByCategories(categoria: string): string {
-    switch (categoria.toLowerCase()) {
+    switch (categoria) {
       case 'Antipasto':
-        return '../../../assets/img/copertine.png';
+        return '../../../assets/img/antipasto.png';
       case 'Pollame':
-        return '../../../assets/img/copertine.png';
+        return '../../../assets/img/pollame.png';
       case 'Pesce':
-        return '../../../assets/img/copertine.png';
+        return '../../../assets/img/pesce.png';
       case 'Carne':
-        return '../../../assets/img/copertine.png';
+        return '../../../assets/img/carne.png';
       case 'Bevande':
-        return '../../../assets/img/copertine.png';
-      case 'Dessert':
-        return '../../../assets/img/copertine.png';
+        return '../../../assets/img/bevande.png';
+      case 'Salsa':
+        return '../../../assets/img/salse.png';
+      case 'Contorno':
+        return '../../../assets/img/contorno.png';
+      case 'Primo':
+        return '../../../assets/img/primo.png';
       default:
-        return '../../../assets/img/copertine.png';
+        return 'https://picsum.photos/200/300?random=1';
     }
   }
-
-getCategory(){
-  this.apiScv.getAllCat().subscribe(cat => {
-    console.log(cat);
-
-  })
-
-}
 
 }

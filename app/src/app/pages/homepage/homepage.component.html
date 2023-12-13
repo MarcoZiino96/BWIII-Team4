@@ -8,3 +8,37 @@
   </splide>
 
 </section>
+
+<section>
+
+  <header class="d-flex justify-content-center mb-4">
+    <ul class="nav nav-pills">
+      <li class="nav-item nav2-text"><a routerLink="#" class="nav-link">Antipasti</a></li>
+      <li class="nav-item nav2-text"><a routerLink="#" class="nav-link">Contorni</a></li>
+      <li class="nav-item nav2-text"><a routerLink="#" class="nav-link">Primi</a></li>
+      <li class="nav-item nav2-text"><a routerLink="#" class="nav-link">Carni</a></li>
+      <li class="nav-item nav2-text"><a routerLink="#" class="nav-link">Pollame</a></li>
+      <li class="nav-item nav2-text"><a routerLink="#" class="nav-link">Salse</a></li>
+      <li class="nav-item nav2-text"><a routerLink="#" class="nav-link">Bevande</a></li>
+    </ul>
+  </header>
+
+
+</section>
+
+<section class="p-2 my-3">
+
+  <div>
+    <h3 class="text-center fw-semibold">
+      PRIMO
+    </h3>
+  </div>
+
+  <splide class="splide" [options]="{ type: 'loop', perPage: 5, autoplay: true, lazyLoad: true, height: 500, autoWidth: true, gap: 15,  }">
+    <splide-slide *ngFor="let r of ricetteArrPrimo" class="containerImgCard">
+      <img class="imgCard" [src]="getImgByCategories(r.categoria)" alt="Immagine Ricetta" />
+      <h3 class="titoloCard">{{ r.nome }}</h3>
+    </splide-slide>
+  </splide>
+
+</section>
