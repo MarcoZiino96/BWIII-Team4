@@ -23,7 +23,7 @@
               Ricette
             </a>
             <ul [ngClass]="{show: aperto}" class="dropdown-menu">
-              <li *ngFor="let categoria of categorie"><a class="dropdown-item" [routerLink]="['/homepage/result/',categoria]">{{categoria}}</a></li>
+              <li *ngFor="let categoria of categorie" (click)="aperto = !aperto"><a class="dropdown-item" [routerLink]="['/homepage/result/',categoria]">{{categoria}}</a></li>
             </ul>
           </li>
         </ul>

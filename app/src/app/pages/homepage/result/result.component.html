@@ -1,11 +1,15 @@
-<a [routerLink]="['/homepage/detail',r.id]" *ngFor="let r of ricette" class="d-flex p-3 border border-black m-2 rounded">
-  <div>
-    <img class="imgCat" [src]="getImgByCategories(r.categoria)" alt="Immagine ricetta">
-  </div>
+<div class="container">
+  <a [routerLink]="['/homepage/detail',r.id]" *ngFor="let r of ricette"
+    class="d-flex p-3 border border-black m-2 rounded">
+    <div class="rel">
+      <img class="imgCat" [src]="getImgByCategories(r.categoria)" alt="Immagine ricetta">
+      <span class="titolo">{{r.nome}}</span>
+    </div>
 
-  <div class="row px-3 py-2">
-    <h4 class="col-12">{{r.nome}}</h4>
-    <p class="d-none d-md-block col-12">{{r.preparazione}}</p>
-    <div><i class="bi bi-bookmark">{{ r.categoria}}</i> | <i class="bi bi-person">{{ r.persone}}</i></div>
-  </div>
-</a>
+    <div class="row px-3 py-2">
+      <h4 class="col-12">{{r.nome}}</h4>
+      <p class="d-none d-md-block col-12">{{r.preparazione}}</p>
+      <div><i class="bi bi-bookmark">{{ r.categoria}}</i> | <i class="bi bi-person">{{ r.persone}}</i></div>
+    </div>
+  </a>
+</div>
