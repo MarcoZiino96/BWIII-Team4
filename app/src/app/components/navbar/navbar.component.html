@@ -1,1 +1,53 @@
 
+<nav class="navbar navbar-expand-md bg-body-tertiary">
+  <button
+  (click)="open = !open"
+   class="btn btn-primary mx-3 hamburger-btn d-md-none d-lg-none btn-fixed-down" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="bi bi-list ham-icon"></i></button>
+<div
+[ngClass]="{show: open}"
+ class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
+    <button
+    (click)="open =!open"
+    type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+  </div>
+</div>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img class="nav-logo" src="../../../assets/recipeme-logo.png" alt="logo"></a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle ricette-btn px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Ricette
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2 input-recipe autocomplete" type="search" placeholder="Cerca una ricetta" aria-label="Search"
+        nz-input
+        [formControl]="input"
+        (input)="onInput($event)"
+        [nzAutocomplete]="auto">
+        <button class="btn btn-outline-success search-btn px-4" type="submit" (click)="this.act(this.element.activeItem.nzValue)"><i class="bi bi-search src-icon"></i></button>
+        <nz-autocomplete #auto>
+          <div *ngFor="let option of options">
+            <nz-auto-option [nzValue]="option">{{option}}</nz-auto-option>
+          </div>
+        </nz-autocomplete>
+      </form>
+      <div>
+
+        <a class="ms-2 accedi-btn px-4" routerLink="auth/login"><i class="bi bi-person-circle"></i></a>
+        </div>
+    </div>
+  </div>
+</nav>
