@@ -1,6 +1,8 @@
 <div class="mioFixed">
   <nav id="" class="navbar navbar-expand-md bg-body-tertiary">
-
+    <button (click)="open = !open" id="canvasButton" class="btn btn-primary mx-3 hamburger-btn d-md-none d-lg-none btn-fixed-down"
+      type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+      aria-controls="offcanvasWithBothOptions"><i class="bi bi-list ham-icon"></i></button>
     <div [ngClass]="{show: open}" class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1"
       id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
       <div class="offcanvas-header">
@@ -10,7 +12,7 @@
         <button (click)="open =!open" type="button" class="btn-close" data-bs-dismiss="offcanvas"
           aria-label="Close"></button>
       </div>
-      <div class="offcanvas-body d-md-none">
+      <div class="offcanvas-body d-md-none" >
 
         <div class="row">
 
@@ -28,8 +30,7 @@
             </form>
           </div>
           <div class="col-12">
-            <a (click)="open = !open" routerLink="/homepage"><i class="bi bi-house">Home</i></a>
-          </div>
+            <a (click)="open = !open" routerLink="/homepage"><i class="bi bi-house">Home</i></a></div>
           <div class="col-12">
             <ul class="listaCanvas">
               <li *ngFor="let categoria of categorie" (click)="open = !open"><a class="dropdown-item"
@@ -37,8 +38,7 @@
             </ul>
           </div>
           <div class="col-12">
-            <a (click)="open = !open" class="ms-2 accedi-btn px-4" routerLink="auth/login"><i
-                class="bi bi-person-circle"></i></a>
+            <a (click)="open = !open" class="ms-2 accedi-btn px-4" routerLink="auth/login"><i class="bi bi-person-circle"></i></a>
           </div>
 
         </div>
@@ -46,20 +46,8 @@
       </div>
     </div>
     <div class="container-fluid">
-
-      <div class="mobile-nav d-flex d-flex justify-content-between">
-        <div class="col">
-          <button (click)="open = !open" id="canvasButton"
-            class="btn btn-primary mx-3 hamburger-btn d-md-none d-lg-none btn-fixed-down" type="button"
-            data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
-            aria-controls="offcanvasWithBothOptions"><i class="bi bi-list ham-icon"></i></button>
-        </div>
-        <div class="col">
-          <a class="navbar-brand" routerLink="/homepage"><img class="nav-logo"
-              src="../../../assets/recipeme-logo.png" alt="logo"></a>
-        </div>
-      </div>
-
+      <a class="navbar-brand" routerLink="/homepage"><img class="nav-logo" src="../../../assets/recipeme-logo.png"
+          alt="logo"></a>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-lg-0">
           <li class="nav-item dropdown">
