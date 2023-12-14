@@ -38,13 +38,9 @@ export class NavbarComponent {
     }
   }
 
-  //obj!: iWeatherFiltered
-
   @ViewChild('auto') element!: any
 
   actOnceWhenItemSelected: boolean = false
-
-
 
   open: boolean = false
 
