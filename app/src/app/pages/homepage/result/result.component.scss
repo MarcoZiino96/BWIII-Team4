@@ -1,0 +1,43 @@
+.imgCat{
+  width: 150px;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+  &:hover{
+    transform: scale(1.01);
+  }
+}
+
+.rel{
+  position: relative;
+}
+
+.titolo{
+  position: absolute;
+  top: 70%;
+  left: 0%;
+  width: 100%;
+  text-align: center;
+  color: white;
+  text-shadow:
+    1px 1px 0 var(--aranGiallo),
+    -1px 1px 0 var(--aranGiallo),
+    -1px -1px 0 var(--aranGiallo),
+    1px -1px 0 var(--aranGiallo);
+}
+
+@media screen and (min-width:768px) {
+  .imgCat{
+    width: 330px;
+  }
+
+  .titolo{
+    top: 70%;
+    left: 0%;
+    font-size: 1.8rem;
+  }
+}
+
+// &amp;

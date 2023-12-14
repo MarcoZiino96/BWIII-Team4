@@ -20,24 +20,34 @@ export class HomepageComponent {
 
 
   ngOnInit() {
-
     this.apiSvc.getAll().subscribe(data => {
-      this.ricetteArr = data;
+      this.ricetteArr = data.slice(70, 170);
+      this.filterRicetteByCategory('Primo');
+      this.filterRicetteByCategory('Contorno');
+      this.filterRicetteByCategory('Dessert');
+      this.filterRicetteByCategory('Bevande');
     });
-    this.apiSvc.getByCat('Primo')?.subscribe(data1=>{
-      this.ricetteArrPrimo = data1;
-      console.log(this.ricetteArrPrimo);
-    });
-    this.apiSvc.getByCat('Contorno')?.subscribe(data2=>{
-      this.ricetteArrContorno = data2;
-    });
-    this.apiSvc.getByCat('Dessert')?.subscribe(data3=>{
-      this.ricetteArrDessert = data3;
-    });
-    this.apiSvc.getByCat('Bevande')?.subscribe(data4=>{
-      this.ricetteArrBevande = data4;
-    });
+  }
 
+  filterRicetteByCategory(categoria: string): void {
+    const filteredRicette = this.ricetteArr.filter(r => r.categoria === categoria);
+
+    switch (categoria) {
+      case 'Primo':
+        this.ricetteArrPrimo = filteredRicette;
+        break;
+      case 'Contorno':
+        this.ricetteArrContorno = filteredRicette;
+        break;
+      case 'Dessert':
+        this.ricetteArrDessert = filteredRicette;
+        break;
+      case 'Bevande':
+        this.ricetteArrBevande = filteredRicette;
+        break;
+      default:
+        break;
+    }
   }
 
 

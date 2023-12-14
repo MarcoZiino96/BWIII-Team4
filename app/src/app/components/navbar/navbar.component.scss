@@ -66,6 +66,7 @@
   border: 2px solid var(--verdeScuro);
   cursor: pointer;
   transition: .2s linear;
+  width: calc(100vw - 400px);
 
   &::placeholder{
 
@@ -84,12 +85,6 @@
     outline: 2px solid var(--aranGiallo);
 
   }
-
-}
-
-.input-recipe{
-
-  width: calc(100vw - 400px);
 
 }
 .search-btn{
@@ -122,6 +117,22 @@
     background-color: var(--aranGiallo);
 
   }
+
+  #inputCanvas{  // da rivedere, non funziona
+    width: 200px;
+  }
+
+  .listaCanvas{
+    list-style-type:georgian;
+  }
+
+  .input-canvas{
+    border-radius: 40px;
+    border: 2px solid var(--verdeScuro);
+    cursor: pointer;
+    transition: .2s linear;
+  }
+
 
 
 }

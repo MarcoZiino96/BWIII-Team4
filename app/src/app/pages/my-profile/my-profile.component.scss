@@ -53,9 +53,11 @@
     transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
     overflow:hidden;
     border-radius:20px;
-    min-height:200px;
-    min-width: calc(100vw - 1100px);
+    min-height:300px;
+
     box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
+
+
 
    @media (max-width: 768px) {
     min-height:350px;
@@ -66,7 +68,7 @@
   }
 
    &.card-has-bg{
-    background-image:url('https://source.unsplash.com/600x900/?computer,design');
+    background-image:url('https://source.unsplash.com/600x900/?cook');
     transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
     background-size:100%;
     background-repeat:no-repeat;
@@ -164,3 +166,9 @@
 
     }
   }
+
+
+  .transparent-card {
+    box-shadow: none;
+  }
+
