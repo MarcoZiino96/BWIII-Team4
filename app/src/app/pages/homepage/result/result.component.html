@@ -3,12 +3,12 @@
   <a [routerLink]="['/homepage/detail',r.id]" *ngFor="let r of ricette"
     class="d-flex p-3 m-2 rounded-5 card-cont">
     <div class="rel">
-      <img class="imgCat" [src]="getImgByCategories(r.categoria)" alt="Immagine ricetta">
-      <span class="titolo">{{r.nome}}</span>
+      <img class="imgCat me-4" [src]="getImgByCategories(r.categoria)" alt="Immagine ricetta">
+      <span class="titolo nome-img-res">{{r.nome}}</span>
     </div>
 
     <div class="row px-3 py-2">
-      <h4 class="col-12 fw-bold">{{r.nome}}</h4>
+      <h4 class="col-12 fw-bold fs-2 m-fix">{{r.nome}}</h4>
       <p class="d-none d-md-block col-12">{{r.preparazione}}</p>
       <div><i class="bi bi-bookmark type-icon me-1 fw-bold"></i><span class="me-1 fst-italic">{{r.categoria}}</span> |<i class="bi bi-person ms-2 ppl-icon fw-bold ms-1"></i><span class="ms-1 fst-italic">{{r.persone}}</span></div>
     </div>
