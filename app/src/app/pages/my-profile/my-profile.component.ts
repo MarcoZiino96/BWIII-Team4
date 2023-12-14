@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { iAuthData } from '../../Models/auth/i-auth-data';
 
 @Component({
   selector: 'app-my-profile',
@@ -7,9 +9,27 @@ import { Component } from '@angular/core';
 })
 export class MyProfileComponent {
 
+  constructor(private authSvc: AuthService) { }
+
+  user!: iAuthData
+
+  ngOnInit() {
+    this.authSvc.user$.subscribe(res => {
+      if (res) this.user = res
+    })
+  }
+
   fadeIn: string = ''
   dNone: string = 'd-none'
   fadeOut: string = ''
+
+  createFormFadeIn: string = ''
+  createFormDNone: string = 'd-none'
+  createFormFadeOut: string = ''
+
+  profileFadeIn: string = ''
+  profileDNone: string = ''
+  profileFadeOut: string = ''
 
 
   listToggle() {
@@ -28,6 +48,21 @@ export class MyProfileComponent {
         }, 400
       )
 
+    }
+  }
+
+  switchToCreateForm() {
+    if (this.createFormDNone) {
+      this.profileFadeOut = 'fade-out-animation'
+      setTimeout(
+        () => {
+          this.createFormDNone = ''
+          this.createFormFadeIn = 'fade-in-animation'
+          this.createFormFadeIn = ''
+          this.profileFadeOut = ''
+          this.profileDNone = 'd-none'
+        }, 400
+      )
     }
   }
 

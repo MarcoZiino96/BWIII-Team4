@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-recipe-form',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './recipe-form.component.scss'
 })
 export class RecipeFormComponent {
+
+  @Input() mode!: string // mode = 'create' oppure 'edit'
 
 }

@@ -23,8 +23,7 @@ registerLocaleData(it);
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent,
-    RecipeFormComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

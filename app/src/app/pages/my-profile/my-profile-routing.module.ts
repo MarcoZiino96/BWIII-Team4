@@ -7,7 +7,8 @@ const routes: Routes = [
   {
     path: '',
     component: MyProfileComponent
-  }
+  },
+  { path: 'edit', loadChildren: () => import('./edit/edit.module').then(m => m.EditModule) }
 ];
 
 @NgModule({
