@@ -17,6 +17,9 @@ export class HomepageComponent {
   ricetteArrContorno: iRicetta[] = [];
   ricetteArrDessert: iRicetta[] = [];
   ricetteArrBevande: iRicetta[] = [];
+  categorie:string[] = [];
+
+
 
 
   ngOnInit() {
@@ -27,6 +30,8 @@ export class HomepageComponent {
       this.filterRicetteByCategory('Dessert');
       this.filterRicetteByCategory('Bevande');
     });
+    this.apiSvc.getAllCat().subscribe(res => {
+      this.categorie = res})
   }
 
   filterRicetteByCategory(categoria: string): void {
@@ -54,6 +59,5 @@ export class HomepageComponent {
   getImgByCategories(categoria:string):string {
     return this.apiSvc.getImgByCategories(categoria)
   }
-
 
 }
