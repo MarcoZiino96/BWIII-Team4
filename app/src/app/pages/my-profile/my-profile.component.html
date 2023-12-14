@@ -2,7 +2,7 @@
   <div class="row d-flex justify-content-center align-items-center">
 
     <!-- LEFT BAR -->
-    <div class="col-md-2 col-lg-3 col-xl-4 col-xxl-2 left-bar-container list-item">
+    <div class="col-md-2 col-lg-3 col-xl-2 left-bar-container list-item">
       <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary left-bar">
         <a href="/" class="d-block link-body-emphasis text-decoration-none b-bottom icon-cont" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
           <i class="bi bi-person-circle user-icon"></i>
@@ -38,8 +38,8 @@
       </div>
     </div>
 
-    <!-- CARDS -->
-    <div class="col-md-10 col-lg-9 col-xl-8 col-xxl-10">
+    <!-- CARDS AND LIST -->
+    <div [ngClass]="['col-md-10', 'col-lg-9', 'col-xl-10']" (click)="listToggle()">
       <div class="row">
         <div class="col text-left">
           <h2 class=" text-black font-weight-bolder ms-3 mb-5">Profilo</h2>
@@ -56,9 +56,9 @@
           </div>
         </div>
       </div>
-      <div class="row d-flex justify-content-left align-items-center h-100">
+      <div class="row d-flex justify-content-left align-items-center h-100 mt-4">
         <div class="col-12">
-          <div class="card rounded-5">
+          <div [ngClass]="['card rounded-5', dNone, fadeIn, fadeOut]">
             <div class="card-body p-4">
               <h4 class="text-left my-3 pb-3">Le tue ricette</h4>
               <table class="table mb-4">
@@ -98,49 +98,3 @@
     </div>
   </div>
 
-  <!-- LIST -->
-
-  <!-- <div>
-    <div class="container h-100 py-5">
-      <div class="row d-flex justify-content-left align-items-center h-100">
-        <div class="offset-md-2 offset-lg-3 offset-xl-4 offset-xxl-2 col-md-6 col-lg-8 col-xl-8 col-xxl-10">
-          <div class="card rounded-5">
-            <div class="card-body p-4">
-              <h4 class="text-left my-3 pb-3">Le tue ricette</h4>
-              <table class="table mb-4">
-                <thead>
-                  <tr>
-                    <th scope="col">No.</th>
-                    <th scope="col">Nome ricetta</th>
-                    <th scope="col">Data creazione</th>
-                    <th scope="col">Azioni</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Linguine all'astice</td>
-                    <td>data</td>
-                    <td>
-                      <button type="submit" class="btn btn-danger rounded-5">Elimina</button>
-                      <button type="submit" class="btn btn-warning ms-1 rounded-5">Modifica</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Mezzemaniche all'amatriciana</td>
-                    <td>data</td>
-                    <td>
-                      <button type="submit" class="btn btn-danger rounded-5">Elimina</button>
-                      <button type="submit" class="btn btn-warning ms-1 rounded-5">Modifica</button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>-->

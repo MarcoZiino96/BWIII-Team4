@@ -35,3 +35,31 @@
   color: var(--bs-form-invalid-border-color);
 
 }
+
+.fade-in-animation {
+  animation: .4s ease-in-out forwards fade-in;
+}
+
+.fade-out-animation {
+  animation: .4s ease-in-out forwards fade-out;
+}
+
+@keyframes fade-in {
+  from {
+      opacity: 0;
+  }
+
+  to {
+      opacity: 1
+  }
+}
+
+@keyframes fade-out {
+  from {
+      opacity: 1;
+  }
+
+  to {
+      opacity: 0
+  }
+}
