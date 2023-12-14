@@ -23,6 +23,14 @@ export class MyProfileComponent {
   dNone: string = 'd-none'
   fadeOut: string = ''
 
+  createFormFadeIn: string = ''
+  createFormDNone: string = 'd-none'
+  createFormFadeOut: string = ''
+
+  profileFadeIn: string = ''
+  profileDNone: string = ''
+  profileFadeOut: string = ''
+
 
   listToggle() {
     if (this.dNone) {
@@ -40,6 +48,21 @@ export class MyProfileComponent {
         }, 400
       )
 
+    }
+  }
+
+  switchToCreateForm() {
+    if (this.createFormDNone) {
+      this.profileFadeOut = 'fade-out-animation'
+      setTimeout(
+        () => {
+          this.createFormDNone = ''
+          this.createFormFadeIn = 'fade-in-animation'
+          this.createFormFadeIn = ''
+          this.profileFadeOut = ''
+          this.profileDNone = 'd-none'
+        }, 400
+      )
     }
   }
 
