@@ -5,15 +5,20 @@
     <div class="rel">
       <img class="imgCat" [src]="getImgByCategories(r.categoria)" alt="Immagine ricetta">
       <span class="titolo">{{ r.nome | truncate:25 }}</span>
+      <img class="imgCat me-4" [src]="getImgByCategories(r.categoria)" alt="Immagine ricetta">
+      <span class="titolo nome-img-res">{{r.nome}}</span>
     </div>
 
     <div class="row px-3 py-2">
       <h4 class="col-12 fw-bold">{{ r.nome | truncate:25 }}</h4>
+      <h4 class="col-12 fw-bold fs-2 m-fix">{{r.nome}}</h4>
       <p class="d-none d-md-block col-12">{{r.preparazione}}</p>
       <div>
-        <i class="bi bi-bookmark">{{ r.categoria}}</i></div>
-      <div>
-        <i class="bi bi-person">{{ r.persone}}</i></div>
+        <i class="bi bi-bookmark type-icon me-1 fw-bold"><span class="me-1 fst-italic">{{r.categoria}}</span></i>
+      </div>
+        <div>
+          <i class="bi bi-person ms-2 ppl-icon fw-bold ms-1"><span class="ms-1 fst-italic">{{r.persone}}</span></i>
+        </div>
     </div>
   </a>
 </div>
