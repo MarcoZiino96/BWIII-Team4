@@ -1,8 +1,6 @@
 <div class="mioFixed">
-  <nav class="navbar navbar-expand-md bg-body-tertiary">
-    <button (click)="open = !open" class="btn btn-primary mx-3 hamburger-btn d-md-none d-lg-none btn-fixed-down"
-      type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
-      aria-controls="offcanvasWithBothOptions"><i class="bi bi-list ham-icon"></i></button>
+  <nav id="" class="navbar navbar-expand-md bg-body-tertiary">
+
     <div [ngClass]="{show: open}" class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1"
       id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
       <div class="offcanvas-header">
@@ -12,7 +10,7 @@
         <button (click)="open =!open" type="button" class="btn-close" data-bs-dismiss="offcanvas"
           aria-label="Close"></button>
       </div>
-      <div class="offcanvas-body d-md-none" >
+      <div class="offcanvas-body d-md-none">
 
         <div class="row">
 
@@ -29,30 +27,39 @@
               </nz-autocomplete>
             </form>
           </div>
-          <div class="col-12"><a routerLink="/homepage"><i class="bi bi-house">Home</i></a></div>
+          <div class="col-12">
+            <a (click)="open = !open" routerLink="/homepage"><i class="bi bi-house">Home</i></a>
+          </div>
           <div class="col-12">
             <ul class="listaCanvas">
-              <li *ngFor="let categoria of categorie" (click)="aperto = !aperto"><a class="dropdown-item"
+              <li *ngFor="let categoria of categorie" (click)="open = !open"><a class="dropdown-item"
                   [routerLink]="['/homepage/result/',categoria]">{{categoria}}</a></li>
             </ul>
           </div>
-          <div class="col-12"></div>
-          <div class="col-12"></div>
-          <div class="col-12"></div>
-          <div class="col-12"></div>
-          <div class="col-12"></div>
-          <div class="col-12"></div>
-          <div class="col-12"></div>
-          <div class="col-12"></div>
-          <div class="col-12"></div>
+          <div class="col-12">
+            <a (click)="open = !open" class="ms-2 accedi-btn px-4" routerLink="auth/login"><i
+                class="bi bi-person-circle"></i></a>
+          </div>
 
         </div>
 
       </div>
     </div>
     <div class="container-fluid">
-      <a class="navbar-brand" routerLink="/homepage"><img class="nav-logo" src="../../../assets/recipeme-logo.png"
-          alt="logo"></a>
+
+      <div class="mobile-nav d-flex d-flex justify-content-between">
+        <div class="col">
+          <button (click)="open = !open" id="canvasButton"
+            class="btn btn-primary mx-3 hamburger-btn d-md-none d-lg-none btn-fixed-down" type="button"
+            data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+            aria-controls="offcanvasWithBothOptions"><i class="bi bi-list ham-icon"></i></button>
+        </div>
+        <div class="col">
+          <a class="navbar-brand" routerLink="/homepage"><img class="nav-logo"
+              src="../../../assets/recipeme-logo.png" alt="logo"></a>
+        </div>
+      </div>
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-lg-0">
           <li class="nav-item dropdown">
