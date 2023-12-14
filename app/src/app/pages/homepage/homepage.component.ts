@@ -21,7 +21,7 @@ export class HomepageComponent {
 
   ngOnInit() {
     this.apiSvc.getAll().subscribe(data => {
-      this.ricetteArr = data.slice(0, 100);
+      this.ricetteArr = data.slice(70, 170);
       this.filterRicetteByCategory('Primo');
       this.filterRicetteByCategory('Contorno');
       this.filterRicetteByCategory('Dessert');
