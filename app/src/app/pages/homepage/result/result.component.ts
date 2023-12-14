@@ -10,28 +10,25 @@ import { APIricetteService } from '../../../services/apiricette.service';
 })
 export class ResultComponent {
 
-  ricette:iRicetta[] = [];
-
   constructor(
     private route: ActivatedRoute,
     private apiSvc: APIricetteService
   ) { }
 
 
-  ngOnInit() {
-
-    this.route.params.subscribe((params: any) => {
-      this.apiSvc.getById(params.id).subscribe((res => {
-        // this.ricette = res;
-
-        console.log(res);
-
-
-      }))
-    })
-  }
+  ricette:iRicetta[] = [];
 
   getImgByCategories(categoria:string){
     return this.apiSvc.getImgByCategories(categoria)
   }
+
+
+  ngOnInit() {
+    this.route.params.subscribe((params: any) => {
+      this.apiSvc.getByCat(params.categoria)?.subscribe((res => {
+        this.ricette = res;
+      }))
+    })
+  }
+
 }
