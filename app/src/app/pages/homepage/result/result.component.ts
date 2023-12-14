@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Pipe } from '@angular/core';
 import { iRicetta } from '../../../Models/iricetta';
 import { ActivatedRoute } from '@angular/router';
 import { APIricetteService } from '../../../services/apiricette.service';
