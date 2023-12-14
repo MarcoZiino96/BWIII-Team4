@@ -4,7 +4,6 @@ import { FormBuilder, FormControl } from '@angular/forms';
 import { APIricetteService } from '../../services/apiricette.service';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: '.app-navbar',
   templateUrl: './navbar.component.html',
@@ -39,13 +38,9 @@ export class NavbarComponent {
     }
   }
 
-  //obj!: iWeatherFiltered
-
   @ViewChild('auto') element!: any
 
   actOnceWhenItemSelected: boolean = false
-
-
 
   open: boolean = false
 
@@ -71,5 +66,17 @@ export class NavbarComponent {
 
 
 
+
+  ricetteArr:iRicetta[] = [];
+
+
+
+
+  ngOnInit(){
+    this.apiSvc.getAll().subscribe(data =>{
+      this.ricetteArr = data
+      console.log(this.ricetteArr)
+    })
+  }
 
 }

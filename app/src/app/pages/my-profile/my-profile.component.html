@@ -2,7 +2,7 @@
   <div class="row d-flex justify-content-center align-items-center">
 
     <!-- LEFT BAR -->
-    <div class="col-md-2 left-bar-container">
+    <div class="col-md-2 col-lg-3 col-xl-2 left-bar-container list-item">
       <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary left-bar">
         <a href="/" class="d-block link-body-emphasis text-decoration-none b-bottom icon-cont" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
           <i class="bi bi-person-circle user-icon"></i>
@@ -38,15 +38,15 @@
       </div>
     </div>
 
-    <!-- CARDS -->
-    <div class="col-md-10">
+    <!-- CARDS AND LIST -->
+    <div [ngClass]="['col-md-10', 'col-lg-9', 'col-xl-10']" (click)="listToggle()">
       <div class="row">
         <div class="col text-left">
           <h2 class=" text-black font-weight-bolder ms-3 mb-5">Ciao {{user.user.name}}.</h2>
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+        <div class="col-12 mb-4">
           <div class="card text-dark card-has-bg click-col">
             <div class="card-img-overlay d-flex flex-column">
               <div class="card-body">
@@ -56,7 +56,45 @@
           </div>
         </div>
       </div>
+      <div class="row d-flex justify-content-left align-items-center h-100 mt-4">
+        <div class="col-12">
+          <div [ngClass]="['card rounded-5', dNone, fadeIn, fadeOut]">
+            <div class="card-body p-4">
+              <h4 class="text-left my-3 pb-3">Le tue ricette</h4>
+              <table class="table mb-4">
+                <thead>
+                  <tr>
+                    <th scope="col">No.</th>
+                    <th scope="col">Nome ricetta</th>
+                    <th scope="col">Data creazione</th>
+                    <th scope="col">Azioni</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Linguine all'astice</td>
+                    <td>data</td>
+                    <td>
+                      <button type="submit" class="btn btn-danger rounded-5"><i class="bi bi-trash"></i></button>
+                      <button type="submit" class="btn btn-warning ms-1 rounded-5"><i class="bi bi-pencil"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Mezzemaniche all'amatriciana</td>
+                    <td>data</td>
+                    <td>
+                      <button type="submit" class="btn btn-danger rounded-5"><i class="bi bi-trash"></i></button>
+                      <button type="submit" class="btn btn-warning ms-1 rounded-5"><i class="bi bi-pencil"></i></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
   </div>
-</div>
+
