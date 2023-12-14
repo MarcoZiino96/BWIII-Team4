@@ -7,6 +7,7 @@ import { HomepageRoutingModule } from './homepage-routing.module';
 import { HomepageComponent } from './homepage.component';
 import { DetailComponent } from './detail/detail.component';
 import { ResultComponent } from './result/result.component';
+import { PipesModule } from '../../pipes/pipes.module';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ResultComponent } from './result/result.component';
   imports: [
     CommonModule,
     HomepageRoutingModule,
-    NgxSplideModule
+    NgxSplideModule,
+    PipesModule
   ]
 })
 export class HomepageModule { }
