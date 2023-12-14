@@ -6,6 +6,7 @@
 
 .mioFixed{
   height: 100px;
+  width: 100vw;
   position: fixed;
   top: 0;
   z-index: 10;
@@ -136,6 +137,10 @@
   .mobile-nav{
     width: 100%;
     background-color: white;
+  }
+
+  .buttonContainer{
+
   }
 
 

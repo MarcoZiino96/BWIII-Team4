@@ -1,8 +1,19 @@
 <div class="mioFixed">
-  <nav id="" class="navbar navbar-expand-md bg-body-tertiary">
-    <button (click)="open = !open" id="canvasButton" class="btn btn-primary mx-3 hamburger-btn d-md-none d-lg-none btn-fixed-down"
-      type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
-      aria-controls="offcanvasWithBothOptions"><i class="bi bi-list ham-icon"></i></button>
+  <nav class="navbar navbar-expand-md">
+
+    <div class="buttonContainer w-100 d-flex align-items-center d-block d-md-none">
+      <div class="col text-start">
+        <button (click)="open = !open" id="canvasButton" class="btn btn-primary mx-3 hamburger-btn btn-fixed-down"
+          type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+          aria-controls="offcanvasWithBothOptions"><i class="bi bi-list ham-icon"></i></button>
+      </div>
+
+      <div class="col text-end">
+        <a class="navbar-brand" routerLink="/homepage"><img class="nav-logo" src="../../../assets/recipeme-logo.png"
+          alt="logo"></a>
+      </div>
+    </div>
+
     <div [ngClass]="{show: open}" class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1"
       id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
       <div class="offcanvas-header">
@@ -46,7 +57,7 @@
       </div>
     </div>
     <div class="container-fluid">
-      <a class="navbar-brand" routerLink="/homepage"><img class="nav-logo" src="../../../assets/recipeme-logo.png"
+      <a class="navbar-brand d-none d-md-block" routerLink="/homepage"><img class="nav-logo" src="../../../assets/recipeme-logo.png"
           alt="logo"></a>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-lg-0">
