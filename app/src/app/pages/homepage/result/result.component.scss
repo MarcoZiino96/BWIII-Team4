@@ -1,0 +1,17 @@
+.imgCat{
+  width: 150px;
+}
+
+@media screen and (min-width:768px) {
+  .imgCat{
+    width: 330px;
+  }
+}
+
+a{
+  text-decoration: none;
+  color: black;
+  &:hover{
+    transform: scale(1.01);
+  }
+}

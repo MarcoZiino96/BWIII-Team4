@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { iRicetta } from '../../Models/iricetta';
 import { FormBuilder, FormControl } from '@angular/forms';
 import { APIricetteService } from '../../services/apiricette.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: '.app-navbar',
@@ -16,7 +16,10 @@ export class NavbarComponent {
   res!: iRicetta[]
   lang!: string
 
-  constructor(private fb: FormBuilder, private apiSvc: APIricetteService, private router: Router) { }
+  constructor(
+    private fb: FormBuilder,
+    private apiSvc: APIricetteService,
+    private router: Router) { }
 
   input: FormControl = this.fb.control(null)
 
@@ -43,6 +46,7 @@ export class NavbarComponent {
   actOnceWhenItemSelected: boolean = false
 
   open: boolean = false
+  aperto: boolean = false
 
 
   ngDoCheck() {
@@ -64,19 +68,15 @@ export class NavbarComponent {
       }
   }
 
-
-
-
-  ricetteArr:iRicetta[] = [];
-
-
-
+  categorie:string[] = [];
 
   ngOnInit(){
-    this.apiSvc.getAll().subscribe(data =>{
-      this.ricetteArr = data
-      console.log(this.ricetteArr)
+    this.apiSvc.getAllCat().subscribe(res => {
+      this.categorie = res
+      console.log(res);
+      console.log(this.categorie);
     })
   }
+
 
 }
