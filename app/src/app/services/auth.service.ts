@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 import { iRegister } from '../Models/auth/i-register';
 import { iPermissions } from '../Models/auth/i-permissions';
 import { iRegisterData } from '../Models/auth/i-register-data';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -26,7 +27,7 @@ export class AuthService {
   jwtH: JwtHelperService = new JwtHelperService()
   endpoint: string = `${environment.backendUrl}`
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router:Router) {
     this.restoreUserSession()
   }
 
@@ -66,6 +67,7 @@ export class AuthService {
   logOut() {
     this.authSubject.next(null)
     localStorage.removeItem('authData')
+    this.router.navigate(['/auth/login'])
   }
 
   autoLogOut(jwt: string) {
