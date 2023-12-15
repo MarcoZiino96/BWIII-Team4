@@ -18468,23 +18468,6 @@
       "immagine_primaria": "",
       "visibile": "",
       "userId": -1
-    },
-    {
-      "nome": "Ricetta",
-      "categoria": "Bevande",
-      "persone": 0,
-      "note": "",
-      "ingredienti": [
-        "ingrediente 1",
-        "ingrediente 2",
-        "ingrediente 3"
-      ],
-      "preparazione": "",
-      "immagine_primaria": "",
-      "visibile": "",
-      "public": false,
-      "userId": 2,
-      "id": 26979
     }
   ]
 }
