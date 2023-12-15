@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-left-bar',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class LeftBarComponent {
 
+  constructor( private authSvc:AuthService){}
+
+  logOut(){
+
+    this.authSvc.logOut();
+  }
 }

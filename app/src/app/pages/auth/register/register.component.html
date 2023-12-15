@@ -13,7 +13,7 @@
           <form [formGroup]="registerForm" (ngSubmit)="register()">
             <!-- 2 column grid layout with text inputs for the first and last names -->
             <div class="row">
-              <div class="col-md-6 mb-4">
+              <div class="col-md-6 mb-2">
                 <div class="form-outline">
                   <label class="form-label" for="name ">Nome</label>
                   <input type="text" id="name" class="form-control mb-1" formControlName="name" [ngClass]="{'form-control': true, 'is-valid': isValid('name'), 'is-invalid': isInvalid('name')}" />
@@ -22,7 +22,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-6 mb-4">
+              <div class="col-md-6 mb-2">
                 <div class="form-outline">
                   <label class="form-label" for="form3Example2">Cognome</label>
                   <input type="text" id="surname" class="form-control mb-1" formControlName="surname" [ngClass]="{'form-control': true, 'is-valid': isValid('surname'), 'is-invalid': isInvalid('surname')}" />
@@ -34,7 +34,7 @@
             </div>
 
             <!-- Email input -->
-            <div class="form-outline mb-4">
+            <div class="form-outline mb-2">
               <label class="form-label" for="form3Example3">Indirizzo e-mail</label>
               <input type="email" id="email" class="form-control mb-1" formControlName="email" [ngClass]="{'form-control': true, 'is-valid': isValid('email'), 'is-invalid': isInvalid('email')}" />
               <div class="feedback text-start ps-3 mb-2 valid">
@@ -45,7 +45,7 @@
 
             <!-- Password input -->
             <div class="row">
-              <div class="col-md-6 form-outline mb-4">
+              <div class="col-md-6 form-outline mb-2">
                 <label class="form-label" for="form3Example4">Password</label>
                 <input type="password" id="password" class="form-control mb-1" formControlName="password"  [ngClass]="{'form-control': true, 'is-valid': isValid('password'), 'is-invalid': isInvalid('password')}" />
                 <div class="feedback text-start ps-3 mb-2 valid">
@@ -63,7 +63,7 @@
 
 
             <!-- Submit button -->
-            <button type="submit" class="btn btn-primary btn-block mb-4 btn-signup">
+            <button type="submit" class="btn btn-primary btn-block mb-3 btn-signup">
               Registrati
             </button>
 

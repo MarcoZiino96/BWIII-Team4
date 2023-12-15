@@ -118,7 +118,7 @@
   }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     .left-bar{
 
       display: none !important;
@@ -136,5 +136,18 @@
 
     font-family: 'Dancing Script', cursive;
     font-size: 2rem;
+
+  }
+
+
+  .plus-icon{
+
+    transition: .2s linear;
+
+    &:hover{
+
+      color: var(--verdeScuro);
+
+    }
 
   }
