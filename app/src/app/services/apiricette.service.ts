@@ -29,7 +29,23 @@ export class APIricetteService {
     }))
   }
 
+  getIngredients(query: string, limit: number): Observable<string[]> {
+    let ingredienti: string[] = []
+    let cont = 0
+    const generateRandomNumber = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1)) + min
+    return this.http.get<iRicetta[]>(`${environment.apiUrl}?ingredienti_like=${query}&_limit=${limit}`).pipe(map(res => {
+      res.forEach(r => r.ingredienti.forEach(i => ingredienti.push(i)))
+      ingredienti = ingredienti.filter(i => {
+        if (generateRandomNumber(0, 100) >= 80 && cont < limit) {
+          cont++
+          return true
+        }
+        return false
 
+      })
+      return ingredienti
+    }))
+  }
 
   searchByName(query: string, limit: number): Observable<iRicetta[]> {
     return this.http.get<iRicetta[]>(`${environment.apiUrl}?nome_like=${query}&_limit=${limit}`)

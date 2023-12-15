@@ -1,45 +1,4 @@
-.left-bar{
 
-  width: 4.5rem;
-  border: 1px solid (var(--aranGiallo));
-  border-radius: 40px;
-  box-shadow: 1px 1px 20px 1px rgba(0, 128, 0, 0.325);
-
-  .b-bottom{
-
-    border-bottom: 1px solid var(--aranGiallo);
-
-  }
-
-  .profile-icon{
-
-    color: var(--verdeScuro);
-    transition: .2s linear;
-    font-size: 1.2rem;
-
-    &:hover{
-
-      color: green;
-
-    }
-
-  }
-
-  .user-icon{
-
-    font-size: 2rem;
-    color: var(--aranGiallo);
-    margin-left: 19px;
-    transition: .2s linear;
-
-    &:hover{
-
-      color: green;
-
-    }
-  }
-
-}
   .lead{
     color:#aaa;
   }
@@ -170,6 +129,7 @@
 
   .transparent-card {
     box-shadow: none;
+    border: none;
   }
 
   .my-recipe{
