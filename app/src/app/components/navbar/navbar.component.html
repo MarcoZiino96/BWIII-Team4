@@ -20,7 +20,7 @@
         <div class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
           <img class="nav-logo" src="../../../assets/img/recipeme-logo.png" alt="logo">
         </div>
-        <button (click)="open =!open" type="button" class="btn-close" data-bs-dismiss="offcanvas"
+        <button (click)="open =!open" type="button" class="btn-close close-btn" data-bs-dismiss="offcanvas"
           aria-label="Close"></button>
       </div>
       <div class="offcanvas-body d-md-none" >
@@ -40,11 +40,11 @@
               </nz-autocomplete>
             </form>
           </div>
-          <div class="col-12">
+          <div class="col-12 mb-2">
             <a class="home-link" (click)="open = !open" routerLink="/homepage">Home</a></div>
           <div class="col-12">
             <ul class="listaCanvas">
-              <li *ngFor="let categoria of categorie" (click)="open = !open"><a class="dropdown-item list-item"
+              <li *ngFor="let categoria of categorie" (click)="open = !open"><a class="dropdown-item list-item ms-2"
                   [routerLink]="['/homepage/result/',categoria]">{{categoria}}</a></li>
             </ul>
           </div>
@@ -67,7 +67,7 @@
               Ricette
             </a>
             <ul [ngClass]="{show: aperto}" class="dropdown-menu">
-              <li *ngFor="let categoria of categorie" (click)="aperto = !aperto"><a class="dropdown-item"
+              <li *ngFor="let categoria of categorie" (click)="aperto = !aperto"><a class="dropdown-item list-ricette"
                   [routerLink]="['/homepage/result/',categoria]">{{categoria}}</a></li>
             </ul>
           </li>

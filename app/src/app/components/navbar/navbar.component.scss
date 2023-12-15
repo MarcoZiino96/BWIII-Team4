@@ -212,3 +212,20 @@
 
 }
 
+.list-ricette{
+
+  transition: .2s ease-in-out;
+
+  &:hover{
+    border-radius: 40px;
+    background-color: var(--verdeScuro);
+
+  }
+
+}
+
+.close-btn{
+
+  transition: .2s linear;
+
+}
