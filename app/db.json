@@ -45,6 +45,13 @@
       "name": "Emanuele",
       "surname": "Barone",
       "id": 6
+    },
+    {
+      "email": "marcoziino07@gmail.com",
+      "password": "$2a$10$W3wuKBdjGr0OxqnjsV/.j.U4bJh1QLypNulwkynK8Tu0xPKqp6Mr2",
+      "name": "Marco ",
+      "surname": "Ziino",
+      "id": 7
     }
   ],
   "permissions": [
@@ -72,6 +79,11 @@
       "userId": 6,
       "isAdmin": false,
       "id": 5
+    },
+    {
+      "userId": 7,
+      "isAdmin": false,
+      "id": 6
     }
   ],
   "ricette": [

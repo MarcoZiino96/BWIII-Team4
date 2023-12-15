@@ -29,10 +29,10 @@
 
           <div class="col-12">
             <form class="d-flex" role="search">
-              <input class="form-control me-2 input-canvas autocomplete" type="search" placeholder="Cerca una ricetta"
+              <input  class="form-control me-2 input-canvas autocomplete" type="search" placeholder="Cerca una ricetta"
                 aria-label="Search" nz-input [formControl]="input" (input)="onInput($event)" [nzAutocomplete]="auto">
               <button class="btn btn-outline-success search-btn px-4" type="submit"
-                (click)="this.act(this.element.activeItem.nzValue)"><i class="bi bi-search src-icon"></i></button>
+                (click)="this.act(this.element.activeItem.nzValue)" (click)="open = !open" ><i class="bi bi-search src-icon"></i></button>
               <nz-autocomplete #auto>
                 <div *ngFor="let option of options">
                   <nz-auto-option [nzValue]="option">{{option}}</nz-auto-option>
