@@ -21,7 +21,7 @@
 <section class="p-2 my-3">
 
   <splide class="splide"
-    [options]="{ type: 'loop', perPage: 1, autoplay: true, lazyLoad: true, height: 500, autoWidth: true, gap: 15,  }">
+    [options]="{ type: 'loop', perPage: 1, autoplay: true, lazyLoad: true, height: splideHeight, autoWidth: true, gap: 15,  }">
     <splide-slide *ngFor="let r of ricetteArr" class="containerImgCard">
       <a [routerLink]="['/homepage/detail',r.id]">
         <img loading="lazy" class="imgCard rounded-5" [src]="getImgByCategories(r.categoria)" alt="Immagine Ricetta" />

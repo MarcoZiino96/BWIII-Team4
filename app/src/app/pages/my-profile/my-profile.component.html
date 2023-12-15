@@ -1,46 +1,10 @@
 <div class="container">
-  <div class="row d-flex justify-content-center align-items-center">
+  <div class="row d-flex justify-content-center">
 
     <!-- LEFT BAR -->
-    <div class="col-md-2 col-lg-3 col-xl-2 left-bar-container list-item">
+    <div class="col-md-2 col-lg-3 col-xl-2 left-bar-container list-item mt-5">
       <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary left-bar">
-        <a href="/" class="d-block link-body-emphasis text-decoration-none b-bottom icon-cont" data-bs-toggle="tooltip"
-          data-bs-placement="right" data-bs-original-title="Icon-only">
-          <i class="bi bi-person-circle user-icon"></i>
-          <span class="visually-hidden">Icon-only</span>
-        </a>
-        <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
-          <li class="nav-item">
-            <a (click)="switchToCreateForm()" class="nav-link py-3 rounded-0 b-bottom icon-cont" aria-current="page"
-              data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Home" data-bs-original-title="Home">
-              <i class="bi bi-postcard-heart profile-icon"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link py-3 b-bottom rounded-0 icon-cont" data-bs-toggle="tooltip"
-              data-bs-placement="right" aria-label="Dashboard" data-bs-original-title="Dashboard">
-              <i class="bi bi-chat-left-dots profile-icon"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link py-3 b-bottom rounded-0 icon-cont" data-bs-toggle="tooltip"
-              data-bs-placement="right" aria-label="Orders" data-bs-original-title="Orders">
-              <i class="bi bi-basket profile-icon"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link py-3 b-bottom rounded-0 icon-cont" data-bs-toggle="tooltip"
-              data-bs-placement="right" aria-label="Products" data-bs-original-title="Products">
-              <i class="bi bi-house profile-icon"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link py-3 rounded-0 icon-cont" data-bs-toggle="tooltip" data-bs-placement="right"
-              aria-label="Customers" data-bs-original-title="Customers">
-              <i class="bi bi-gear profile-icon"></i>
-            </a>
-          </li>
-        </ul>
+        <app-left-bar></app-left-bar>
       </div>
     </div>
 
@@ -63,11 +27,11 @@
           </div>
         </div>
       </div>
-      <div class="row d-flex justify-content-left align-items-center h-100 mt-4">
+      <div class="row d-flex justify-content-left h-100 mt-4">
         <div class="col-12">
           <div [ngClass]="['card rounded-5', dNone, fadeIn, fadeOut]">
             <div class="card-body p-4">
-              <h4 class="text-left my-3 pb-3">Le tue ricette</h4>
+              <h4 class="text-left my-3 pb-3">Le mie ricette</h4>
               <table class="table mb-4">
                 <thead>
                   <tr>
@@ -105,21 +69,6 @@
     </div>
 
 
-    <!-- Create -->
-    <div [ngClass]="['col-md-10', 'col-lg-9', 'col-xl-10', createFormDNone, createFormFadeIn, createFormFadeOut]">
-      <div class="row">
-        <div class="col text-left">
-          <h2 class=" text-black font-weight-bolder ms-3 mb-5">Ciao {{user.user.name}}. Crea una nuova ricetta</h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 mb-4">
-          <div class="card transparent-card">
-            <app-recipe-form [mode]="'create'"></app-recipe-form>
-          </div>
-        </div>
-      </div>
--ò
-    </div>
+
   </div>
 </div>

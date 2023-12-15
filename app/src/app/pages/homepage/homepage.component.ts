@@ -1,6 +1,7 @@
-import { Component, numberAttribute } from '@angular/core';
+import { Component, HostListener, numberAttribute } from '@angular/core';
 import { APIricetteService } from '../../services/apiricette.service';
 import { iRicetta } from '../../Models/iricetta';
+import { BrowserService } from '../../services/browser.service';
 
 
 @Component({
@@ -10,7 +11,14 @@ import { iRicetta } from '../../Models/iricetta';
 })
 export class HomepageComponent {
 
-  constructor(private apiSvc: APIricetteService) { }
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.updateSplideHeight();
+  }
+
+  constructor(
+    private apiSvc: APIricetteService,
+    private browserService: BrowserService) { }
 
   ricetteArr: iRicetta[] = [];
   ricetteArrPrimo: iRicetta[] = [];
@@ -18,8 +26,18 @@ export class HomepageComponent {
   ricetteArrDessert: iRicetta[] = [];
   ricetteArrBevande: iRicetta[] = [];
   categorie:string[] = [];
+  splideHeight:number = 350;
 
+  private updateSplideHeight() {
+    const screenWidth = this.browserService.innerWidth();
 
+    if (screenWidth > 500) {
+      this.splideHeight = 500
+    }
+    else {
+      this.splideHeight = 350
+    }
+  }
 
 
   ngOnInit() {
@@ -30,6 +48,7 @@ export class HomepageComponent {
       this.filterRicetteByCategory('Dessert');
       this.filterRicetteByCategory('Bevande');
     });
+    this.updateSplideHeight();
     this.apiSvc.getAllCat().subscribe(res => {
       this.categorie = res})
   }

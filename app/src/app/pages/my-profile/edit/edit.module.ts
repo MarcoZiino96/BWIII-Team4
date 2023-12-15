@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { EditRoutingModule } from './edit-routing.module';
 import { EditComponent } from './edit.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { MyProfileModule } from '../my-profile.module';
 
 
 @NgModule({
@@ -11,7 +14,12 @@ import { EditComponent } from './edit.component';
   ],
   imports: [
     CommonModule,
-    EditRoutingModule
+    EditRoutingModule,
+    ReactiveFormsModule,
+    NzAutocompleteModule,
+    NzSelectModule,
+    FormsModule,
+    MyProfileModule
   ]
 })
 export class EditModule { }

@@ -15,7 +15,7 @@ import it from '@angular/common/locales/it';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
-import { RecipeFormComponent } from './components/recipe-form/recipe-form.component';
+
 
 registerLocaleData(it);
 
