@@ -27,9 +27,9 @@
 
         <div class="row">
 
-          <div class="col-12">
+          <div class="col-12 mb-4">
             <form class="d-flex" role="search">
-              <input  class="form-control me-2 input-canvas autocomplete" type="search" placeholder="Cerca una ricetta"
+              <input class="form-control me-2 input-canvas autocomplete" type="search" placeholder="Cerca una ricetta"
                 aria-label="Search" nz-input [formControl]="input" (input)="onInput($event)" [nzAutocomplete]="auto">
               <button class="btn btn-outline-success search-btn px-4" type="submit"
                 (click)="this.act(this.element.activeItem.nzValue)" (click)="open = !open" ><i class="bi bi-search src-icon"></i></button>
@@ -41,15 +41,15 @@
             </form>
           </div>
           <div class="col-12">
-            <a (click)="open = !open" routerLink="/homepage"><i class="bi bi-house">Home</i></a></div>
+            <a class="home-link" (click)="open = !open" routerLink="/homepage">Home</a></div>
           <div class="col-12">
             <ul class="listaCanvas">
-              <li *ngFor="let categoria of categorie" (click)="open = !open"><a class="dropdown-item"
+              <li *ngFor="let categoria of categorie" (click)="open = !open"><a class="dropdown-item list-item"
                   [routerLink]="['/homepage/result/',categoria]">{{categoria}}</a></li>
             </ul>
           </div>
           <div class="col-12">
-            <a (click)="open = !open" class="ms-2 accedi-btn px-4" routerLink="auth/login"><i class="bi bi-person-circle"></i></a>
+            <a (click)="open = !open" class="accedi-btn px-4" routerLink="auth/login"><i class="bi bi-person-circle"></i></a>
           </div>
 
         </div>
@@ -85,7 +85,7 @@
         </form>
         <div>
 
-          <a class="ms-2 accedi-btn px-4" routerLink="auth/login"><i class="bi bi-person-circle"></i></a>
+          <a class="accedi-btn accedi-btn-canvas px-4" routerLink="auth/login"><i class="bi bi-person-circle"></i></a>
         </div>
       </div>
     </div>
