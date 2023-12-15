@@ -3,6 +3,8 @@ import { iRicetta } from '../../Models/iricetta';
 import { FormBuilder, FormControl } from '@angular/forms';
 import { APIricetteService } from '../../services/apiricette.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: '.app-navbar',
@@ -19,9 +21,12 @@ export class NavbarComponent {
   constructor(
     private fb: FormBuilder,
     private apiSvc: APIricetteService,
-    private router: Router) { }
+    private router: Router,
+    private authSvc:AuthService) { }
 
   input: FormControl = this.fb.control(null)
+  isLoggedIn$!:boolean
+
 
 
   onInput(event: Event): void {
@@ -73,10 +78,11 @@ export class NavbarComponent {
   ngOnInit(){
     this.apiSvc.getAllCat().subscribe(res => {
       this.categorie = res
-      console.log(res);
-      console.log(this.categorie);
     })
+    this.authSvc.isLoggedIn$.subscribe(res => this.isLoggedIn$ = res)
   }
+
+
 
 
 }

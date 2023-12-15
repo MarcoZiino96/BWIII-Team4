@@ -1,6 +1,6 @@
 <section class="hero" id="hero">
   <div class="heroText">
-    <div class="text-vid-container">
+    <div class="text-vid-container d-none d-md-none d-lg-block d-xl-block d-xxl-block fade-in-text">
 
     <h1 class="text-white fw-bold">Benvenuti su RecipeMe</h1>
     <p class="text-white fs-3 p-fix">Fatto con amore da: Marco, Mauro, Giulio, Emanuele, Daniele e Barbara</p>
@@ -10,7 +10,7 @@
 
   </div>
 
-  <div class="videoWrapper">
+  <div class="videoWrapper mb-5">
       <video [muted]="'muted'" autoplay="" loop="" muted="muted" class="custom-video" poster="videos/792bd98f3e617786c850493560e11c45.jpg">
           <source src="../../../assets/How To Shoot High Quality Food Videos Like A Pro  Filmmaking & Editing Tips.mp4" type="video/mp4">
 
@@ -21,10 +21,10 @@
 <section class="p-2 my-3">
 
   <splide class="splide"
-    [options]="{ type: 'loop', perPage: 1, autoplay: true, lazyLoad: true, height: 500, autoWidth: true, gap: 15,  }">
+    [options]="{ type: 'loop', perPage: 1, autoplay: true, lazyLoad: true, height: splideHeight, autoWidth: true, gap: 15,  }">
     <splide-slide *ngFor="let r of ricetteArr" class="containerImgCard">
       <a [routerLink]="['/homepage/detail',r.id]">
-        <img loading="lazy" class="imgCard" [src]="getImgByCategories(r.categoria)" alt="Immagine Ricetta" />
+        <img loading="lazy" class="imgCard rounded-5" [src]="getImgByCategories(r.categoria)" alt="Immagine Ricetta" />
       </a>
       <h3 class="titoloCard">{{ r.nome }}</h3>
     </splide-slide>
@@ -34,15 +34,12 @@
 
 <section>
 
-  <header class="d-flex justify-content-center mb-4">
+  <header class="d-flex justify-content-center mb-4 d-none d-md-flex">
     <ul class="nav nav-pills">
-      <li class="nav-item nav2-text"><a routerLink="#" class="nav-link">Antipasti</a></li>
-      <li class="nav-item nav2-text"><a routerLink="#" class="nav-link">Contorni</a></li>
-      <li class="nav-item nav2-text"><a routerLink="#" class="nav-link">Primi</a></li>
-      <li class="nav-item nav2-text"><a routerLink="#" class="nav-link">Carni</a></li>
-      <li class="nav-item nav2-text"><a routerLink="#" class="nav-link">Pollame</a></li>
-      <li class="nav-item nav2-text"><a routerLink="#" class="nav-link">Salse</a></li>
-      <li class="nav-item nav2-text"><a routerLink="#" class="nav-link">Bevande</a></li>
+      <li class="nav-item nav2-text" *ngFor="let categoria of categorie">
+        <a class="nav-link"
+        [routerLink]="['/homepage/result/',categoria]">{{categoria}}</a>
+        </li>
     </ul>
   </header>
 
@@ -54,7 +51,7 @@
   <section class="p-2 my-3">
 
     <div>
-      <h3 class="text-center fw-semibold">
+      <h3 class="text-center fw-semibold mb-4">
         PRIMI
       </h3>
     </div>
@@ -63,7 +60,7 @@
       [options]="{ type: 'loop', perPage: 1, autoplay: true, lazyLoad: true, height: 310, autoWidth: true, gap: 15,  }">
       <splide-slide *ngFor="let r of ricetteArrPrimo" class="containerImgCard">
         <a [routerLink]="['/homepage/detail',r.id]">
-          <img loading="lazy" class="imgCard2" [src]="getImgByCategories(r.categoria)" alt="Immagine Ricetta" />
+          <img loading="lazy" class="imgCard2 rounded-5" [src]="getImgByCategories(r.categoria)" alt="Immagine Ricetta" />
         </a>
         <h3 class="titoloCard2">{{ r.nome }}</h3>
       </splide-slide>
@@ -74,7 +71,7 @@
   <section class="p-2 my-3">
 
     <div>
-      <h3 class="text-center fw-semibold">
+      <h3 class="text-center fw-semibold mb-4">
         CONTORNI
       </h3>
     </div>
@@ -83,7 +80,7 @@
       [options]="{ type: 'loop', perPage: 1, autoplay: true, lazyLoad: true, height: 310, autoWidth: true, gap: 15,  }">
       <splide-slide *ngFor="let r of ricetteArrContorno" class="containerImgCard">
         <a [routerLink]="['/homepage/detail',r.id]">
-          <img loading="lazy" class="imgCard2" [src]="getImgByCategories(r.categoria)" alt="Immagine Ricetta" />
+          <img loading="lazy" class="imgCard2 rounded-5" [src]="getImgByCategories(r.categoria)" alt="Immagine Ricetta" />
         </a>
         <h3 class="titoloCard2">{{ r.nome }}</h3>
       </splide-slide>
@@ -94,7 +91,7 @@
   <section class="p-2 my-3">
 
     <div>
-      <h3 class="text-center fw-semibold">
+      <h3 class="text-center fw-semibold mb-4">
         DESSERTS
       </h3>
     </div>
@@ -103,7 +100,7 @@
       [options]="{ type: 'loop', perPage: 1, autoplay: true, lazyLoad: true, height: 310, autoWidth: true, gap: 15,  }">
       <splide-slide *ngFor="let r of ricetteArrDessert" class="containerImgCard">
         <a [routerLink]="['/homepage/detail',r.id]">
-          <img loading="lazy" class="imgCard2" [src]="getImgByCategories(r.categoria)" alt="Immagine Ricetta" />
+          <img loading="lazy" class="imgCard2 rounded-5" [src]="getImgByCategories(r.categoria)" alt="Immagine Ricetta" />
         </a>
         <h3 class="titoloCard2">{{ r.nome }}</h3>
       </splide-slide>
@@ -114,7 +111,7 @@
   <section class="p-2 my-3">
 
     <div>
-      <h3 class="text-center fw-semibold">
+      <h3 class="text-center fw-semibold mb-4">
         BEVANDE
       </h3>
     </div>
@@ -123,7 +120,7 @@
       [options]="{ type: 'loop', perPage: 1, autoplay: true, lazyLoad: true, height: 310, autoWidth: true, gap: 15,  }">
       <splide-slide *ngFor="let r of ricetteArrBevande" class="containerImgCard">
         <a [routerLink]="['/homepage/detail',r.id]">
-          <img loading="lazy" class="imgCard2" [src]="getImgByCategories(r.categoria)" alt="Immagine Ricetta" />
+          <img loading="lazy" class="imgCard2 rounded-5" [src]="getImgByCategories(r.categoria)" alt="Immagine Ricetta" />
         </a>
         <h3 class="titoloCard2">{{ r.nome }}</h3>
       </splide-slide>

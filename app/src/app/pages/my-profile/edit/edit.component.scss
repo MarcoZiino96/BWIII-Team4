@@ -1,0 +1,115 @@
+.left-bar{
+
+  width: 4.5rem;
+  border: 1px solid (var(--aranGiallo));
+  border-radius: 40px;
+  box-shadow: 1px 1px 20px 1px rgba(0, 128, 0, 0.325);
+
+  .b-bottom{
+
+    border-bottom: 1px solid var(--aranGiallo);
+
+  }
+
+  .profile-icon{
+
+    color: var(--verdeScuro);
+    transition: .2s linear;
+    font-size: 1.2rem;
+
+    &:hover{
+
+      color: green;
+
+    }
+
+  }
+
+  .user-icon{
+
+    font-size: 2rem;
+    color: var(--aranGiallo);
+    margin-left: 19px;
+    transition: .2s linear;
+
+    &:hover{
+
+      color: green;
+
+    }
+  }
+
+}
+
+.bg-image{
+
+  background-image: url('https://i0.wp.com/pinkfortitude.com/wp-content/uploads/2020/12/One-New-Meal-a-Week-Challenge.jpg?fit=1800%2C1200&ssl=1');
+  height: 300px;
+  background-size: contain;
+
+}
+
+.card-style{
+
+  background: hsla(0, 0%, 100%, 0.8);
+  backdrop-filter: blur(30px);
+
+
+}
+
+
+
+.btn-signup, .btn-login{
+
+  background-color: var(--verdeScuro);
+  border-radius: 40px;
+  border: 1px solid var(--aranGialloLight);
+
+  &:hover{
+
+    background-color: var(--aranGiallo);
+
+  }
+
+}
+
+.register-h2, .form-label, .or-text{
+
+  color: var(--verdeScuro);
+
+}
+
+input[type="text"], textarea{
+
+  border-radius: 40px;
+  border: 2px solid var(--verdeScuro);
+  cursor: pointer;
+  transition: .2s linear;
+
+  &::placeholder{
+
+    color: var(--verdeScuro);
+
+  }
+
+  &:hover{
+
+    background-color: var(--aranGialloLight);
+
+  }
+
+  &:focus{
+
+    outline: 2px solid var(--aranGiallo);
+
+  }
+
+}
+
+.form-label{
+
+  margin-top: 5px;
+
+}
+
+

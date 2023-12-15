@@ -16,10 +16,11 @@ a{
 }
 
 .titolo{
+  box-sizing: border-box;
   position: absolute;
   top: 70%;
   left: 0%;
-  width: 100%;
+  width: 90%;
   text-align: center;
   color: white;
   text-shadow:
@@ -51,7 +52,7 @@ a{
   }
 
   .titolo{
-    top: 70%;
+    top: 68%;
     left: 0%;
     font-size: 1.8rem;
   }
@@ -69,10 +70,6 @@ a{
 
 }
 
-.m-fix{
 
-  margin-bottom: -45px;
-
-}
 
 // &amp;

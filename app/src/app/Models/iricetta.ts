@@ -2,7 +2,7 @@ export interface iRicetta {
   id: number
   nome: string
   categoria: string
-  ingrediente_1: string
+  ingrediente_1: string | undefined
   persone: number
   note: string
   ingredienti: string[]

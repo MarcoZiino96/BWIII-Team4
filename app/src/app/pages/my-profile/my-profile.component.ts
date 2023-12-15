@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { iAuthData } from '../../Models/auth/i-auth-data';
+import { APIricetteService } from '../../services/apiricette.service';
 
 @Component({
   selector: 'app-my-profile',
@@ -9,7 +10,7 @@ import { iAuthData } from '../../Models/auth/i-auth-data';
 })
 export class MyProfileComponent {
 
-  constructor(private authSvc: AuthService) { }
+  constructor(private authSvc: AuthService, private apiSvc: APIricetteService) { }
 
   user!: iAuthData
 
@@ -17,6 +18,7 @@ export class MyProfileComponent {
     this.authSvc.user$.subscribe(res => {
       if (res) this.user = res
     })
+    this.apiSvc.getIngredients('limon', 5).subscribe(res => console.log(res))
   }
 
   fadeIn: string = ''

@@ -4,7 +4,7 @@
   <!-- Portfolio Item Heading -->
   <div>
     <h2 class="my-4 fw-bold pt-4">{{ ricetta.nome }}</h2>
-    <ul class="mb-4">
+    <ul class="mb-4 d-none d-md-block d-lg-block d-xl-block d-xxl-block">
       <li><i class="bi bi-bookmark"></i> Categoria: {{ ricetta.categoria }}</li>
       <li><i class="bi bi-person"></i> Persone: {{ ricetta.persone }}</li>
     </ul>
@@ -17,6 +17,10 @@
     </div>
 
     <div class="col-md-4 res-page-text">
+      <ul class="mt-4 d-block d-md-none d-lg-none d-xl-none d-xxl-none">
+        <li><i class="bi bi-bookmark"></i> Categoria: {{ ricetta.categoria }}</li>
+        <li><i class="bi bi-person"></i> Persone: {{ ricetta.persone }}</li>
+      </ul>
       <h3 class="my-3">Preparazione</h3>
       <p>{{ ricetta.preparazione }}</p>
       <h3 class="my-3">Ingredienti</h3>
