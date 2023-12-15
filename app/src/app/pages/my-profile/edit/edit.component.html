@@ -2,7 +2,7 @@
   <div class="row d-flex justify-content-center">
 
     <!-- LEFT BAR -->
-    <div class="col-md-2 col-lg-3 col-xl-2 left-bar-container list-item mt-5">
+    <div class="col-md-2 col-lg-3 col-xl-2 left-bar-container list-item mt-5 d-none d-md-block d-lg-block d-xl-block d-xxl-block">
       <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary left-bar">
         <app-left-bar></app-left-bar>
       </div>
@@ -12,7 +12,7 @@
     <div [ngClass]="['col-md-10', 'col-lg-9', 'col-xl-10']">
       <div class="row">
         <div class="col text-left">
-          <h2 class=" text-black font-weight-bolder ms-3 mb-5">Ciao {{user.user.name}}.</h2>
+          <h2 class=" text-black font-weight-bolder ms-3 mb-3 d-none">Ciao {{user.user.name}}</h2>
         </div>
       </div>
       <div class="row">
@@ -30,7 +30,7 @@
           <form [formGroup]="ricettaForm" (ngSubmit)="submit()">
             <!-- 2 column grid layout with text inputs for recipe name and category -->
             <div class="row">
-              <div class="col-md-6 mb-4">
+              <div class="col-md-6 mb-2">
                 <div class="form-outline">
                   <label class="form-label" for="nome ">Nome della ricetta</label>
                   <input type="text" id="nome" class="form-control mb-1" formControlName="nome"
@@ -41,7 +41,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-6 mb-4">
+              <div class="col-md-6 mb-2">
                 <div class="form-outline">
                   <div class="example-input">
 
@@ -64,7 +64,7 @@
             </div>
 
             <!-- ingredients textarea -->
-            <div class="form-outline mb-4">
+            <div class="form-outline mb-2">
               <label class="form-label" for="ingredienti">Ingredienti (separati da virgola)</label>
               <textarea id="ingredienti" placeholder="Ingrediente numero 1, ingrediente numero 2 ecc..."
                 class="form-control mb-1" formControlName="ingredienti"
@@ -78,7 +78,7 @@
 
             <!-- Preparazione textarea -->
             <div class="row">
-              <div class="form-outline mb-4">
+              <div class="form-outline mb-2">
                 <label class="form-label" for="preparazione">Preparazione</label>
                 <textarea type="preparazione" id="preparazione" class="form-control mb-1" formControlName="preparazione"
                   [ngClass]="{'form-control': true, 'is-valid': isValid('preparazione'), 'is-invalid': isInvalid('preparazione')}"></textarea>
@@ -114,6 +114,7 @@
             <button *ngIf="id" type="submit" class="btn btn-primary btn-block mb-4 btn-signup">
               Aggiorna ricetta
             </button>
+            <div><button routerLink="/my-profile" class="btn btn-primary mb-4 btn-signup">Torna alla pagina precedente</button></div>
 
 
           </form>
