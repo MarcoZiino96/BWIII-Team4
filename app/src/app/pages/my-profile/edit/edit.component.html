@@ -1,1 +1,26 @@
-<p>edit works!</p>
+<div class="container">
+  <div class="row d-flex justify-content-center">
+
+    <!-- LEFT BAR -->
+    <div class="col-md-2 col-lg-3 col-xl-2 left-bar-container list-item mt-5">
+      <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary left-bar">
+        <app-left-bar></app-left-bar>
+      </div>
+    </div>
+
+    <!-- Create -->
+    <div [ngClass]="['col-md-10', 'col-lg-9', 'col-xl-10']">
+      <div class="row">
+        <div class="col text-left">
+          <h2 class=" text-black font-weight-bolder ms-3 mb-5">Ciao {{user.user.name}}.</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 mb-4">
+            <app-recipe-form [mode]="mode" [id]="id"></app-recipe-form>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
