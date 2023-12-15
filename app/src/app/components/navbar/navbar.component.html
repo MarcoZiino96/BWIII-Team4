@@ -51,10 +51,9 @@
             </ul>
           </div>
           <div class="col-12">
-            <a *ngIf="!(isLoggedIn$)" class="accedi-btn accedi-btn-canvas px-4" routerLink="auth/login"><i
-                class="bi bi-person-circle"></i></a>
+            <a *ngIf="!isLoggedIn$" class="accedi-btn accedi-btn-canvas px-4" routerLink="auth/login"><i class="bi bi-door-open"></i></a>
 
-            <a *ngIf="(isLoggedIn$)" class="accedi-btn accedi-btn-canvas px-4" routerLink="my-profile"><i
+            <a *ngIf="isLoggedIn$" class="accedi-btn accedi-btn-canvas px-4" routerLink="my-profile"><i
                 class="bi bi-person-circle"></i></a>
           </div>
 
