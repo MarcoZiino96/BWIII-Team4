@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { iAuthData } from '../../Models/auth/i-auth-data';
 import { APIricetteService } from '../../services/apiricette.service';
+import { iRicetta } from '../../Models/iricetta';
 
 @Component({
   selector: 'app-my-profile',
@@ -13,12 +14,16 @@ export class MyProfileComponent {
   constructor(private authSvc: AuthService, private apiSvc: APIricetteService) { }
 
   user!: iAuthData
+  userArrRecipe:iRicetta[] = [];
 
   ngOnInit() {
     this.authSvc.user$.subscribe(res => {
       if (res) this.user = res
+      this.apiSvc.getAllByUserId(this.user.user.id).subscribe(r => {
+        this.userArrRecipe = r
+      })
     })
-    this.apiSvc.getIngredients('limon', 5).subscribe(res => console.log(res))
+
   }
 
   fadeIn: string = ''
@@ -67,6 +72,20 @@ export class MyProfileComponent {
       )
     }
   }
+
+  deleteById(id:number){
+    this.apiSvc.deleteById(id).subscribe(res => {
+      const index:number = this.userArrRecipe.findIndex(r => {
+        r.id === id
+      })
+      this.userArrRecipe.splice(index, 1)
+      this.dNone = ''
+      this.fadeOut = ''
+      this.fadeIn = ''
+    })
+  }
+
+
 
 
 }
