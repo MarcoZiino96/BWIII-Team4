@@ -37,30 +37,22 @@
                   <tr>
                     <th scope="col">No.</th>
                     <th scope="col">Nome ricetta</th>
-                    <th scope="col">Data creazione</th>
                     <th scope="col">Azioni</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Linguine all'astice</td>
-                    <td>data</td>
-                    <td>
-                      <button type="submit" class="btn btn-danger rounded-5"><i class="bi bi-trash"></i></button>
-                      <button type="submit" class="btn btn-warning ms-1 rounded-5"><i class="bi bi-pencil"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Mezzemaniche all'amatriciana</td>
-                    <td>data</td>
-                    <td>
-                      <button type="submit" class="btn btn-danger rounded-5"><i class="bi bi-trash"></i></button>
-                      <button type="submit" class="btn btn-warning ms-1 rounded-5"><i class="bi bi-pencil"></i></button>
+                  <tr *ngFor="let r of userArrRecipe, let i = index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{r.nome}}</td>
+                    <td class="d-flex">
+                      <button (click)="delete(r.id)" type="button" class="btn btn-danger rounded-5"><i class="bi bi-trash"></i></button>
+                      <button type="button" class="btn btn-warning ms-1 rounded-5"><i class="bi bi-pencil"></i></button>
                     </td>
                   </tr>
                 </tbody>
+                <div class="mt-5" *ngIf="!userArrRecipe.length">
+                  <strong>Non ci sono ricette...</strong>
+                </div>
               </table>
             </div>
           </div>
