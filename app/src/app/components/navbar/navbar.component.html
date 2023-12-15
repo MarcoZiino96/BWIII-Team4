@@ -10,7 +10,7 @@
 
       <div class="col text-end">
         <a class="navbar-brand" routerLink="/homepage"><img class="nav-logo" src="../../../assets/recipeme-logo.png"
-          alt="logo"></a>
+            alt="logo"></a>
       </div>
     </div>
 
@@ -23,7 +23,7 @@
         <button (click)="open =!open" type="button" class="btn-close close-btn" data-bs-dismiss="offcanvas"
           aria-label="Close"></button>
       </div>
-      <div class="offcanvas-body d-md-none" >
+      <div class="offcanvas-body d-md-none">
 
         <div class="row">
 
@@ -32,7 +32,8 @@
               <input class="form-control me-2 input-canvas autocomplete" type="search" placeholder="Cerca una ricetta"
                 aria-label="Search" nz-input [formControl]="input" (input)="onInput($event)" [nzAutocomplete]="auto">
               <button class="btn btn-outline-success search-btn px-4" type="submit"
-                (click)="this.act(this.element.activeItem.nzValue)" (click)="open = !open" ><i class="bi bi-search src-icon"></i></button>
+                (click)="this.act(this.element.activeItem.nzValue)" (click)="open = !open"><i
+                  class="bi bi-search src-icon"></i></button>
               <nz-autocomplete #auto>
                 <div *ngFor="let option of options">
                   <nz-auto-option [nzValue]="option">{{option}}</nz-auto-option>
@@ -41,7 +42,8 @@
             </form>
           </div>
           <div class="col-12 mb-2">
-            <a class="home-link" (click)="open = !open" routerLink="/homepage">Home</a></div>
+            <a class="home-link" (click)="open = !open" routerLink="/homepage">Home</a>
+          </div>
           <div class="col-12">
             <ul class="listaCanvas">
               <li *ngFor="let categoria of categorie" (click)="open = !open"><a class="dropdown-item list-item ms-2"
@@ -49,7 +51,11 @@
             </ul>
           </div>
           <div class="col-12">
-            <a (click)="open = !open" class="accedi-btn px-4" routerLink="auth/login"><i class="bi bi-person-circle"></i></a>
+            <a *ngIf="!(isLoggedIn$)" class="accedi-btn accedi-btn-canvas px-4" routerLink="auth/login"><i
+                class="bi bi-person-circle"></i></a>
+
+            <a *ngIf="(isLoggedIn$)" class="accedi-btn accedi-btn-canvas px-4" routerLink="my-profile"><i
+                class="bi bi-person-circle"></i></a>
           </div>
 
         </div>
@@ -57,8 +63,8 @@
       </div>
     </div>
     <div class="container-fluid">
-      <a class="navbar-brand d-none d-md-block" routerLink="/homepage"><img class="nav-logo" src="../../../assets/recipeme-logo.png"
-          alt="logo"></a>
+      <a class="navbar-brand d-none d-md-block" routerLink="/homepage"><img class="nav-logo"
+          src="../../../assets/recipeme-logo.png" alt="logo"></a>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-lg-0">
           <li class="nav-item dropdown">
@@ -85,7 +91,11 @@
         </form>
         <div>
 
-          <a class="accedi-btn accedi-btn-canvas px-4" routerLink="auth/login"><i class="bi bi-person-circle"></i></a>
+          <a *ngIf="!isLoggedIn$" class="accedi-btn accedi-btn-canvas px-4" routerLink="auth/login"><i class="bi bi-door-open"></i></a>
+
+          <a *ngIf="isLoggedIn$" class="accedi-btn accedi-btn-canvas px-4" routerLink="my-profile"><i
+              class="bi bi-person-circle"></i></a>
+
         </div>
       </div>
     </div>
