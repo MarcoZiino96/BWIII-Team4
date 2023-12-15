@@ -67,8 +67,8 @@ export class APIricetteService {
     return this.http.get<iRicetta>(`${environment.apiUrl}/${id}`)
   }
 
-  getAllByUserId (userId: number) {
-    return this.http.get<iRicetta[]>(`${environment.apiUrl}?_userId=${userId}`)
+  getAllByUserId (userId: number){
+    return this.http.get<iRicetta[]>(`${environment.apiUrl}?userId=${userId}`)
   }
 
   getImgByCategories(categoria: string): string {
