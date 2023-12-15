@@ -59,7 +59,7 @@ export class APIricetteService {
     return this.http.put<iRicetta>(`${environment.apiUrl}/${ricetta.id}`, ricetta)
   }
 
-  delete(id: number): Observable<iRicetta> | undefined {
+  deleteById(id: number): Observable<iRicetta> | undefined {
     return this.http.delete<iRicetta>(`${environment.apiUrl}/${id}`)
   }
 
