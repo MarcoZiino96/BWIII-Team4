@@ -17,7 +17,130 @@
       </div>
       <div class="row">
         <div class="col-12 mb-4">
-            <app-recipe-form [mode]="mode" [id]="id"></app-recipe-form>
+            <!-- Section: Design Block -->
+<section class="text-center border-0">
+
+  <div class="card border-0">
+    <div class="card-body">
+
+      <div class="row d-flex justify-content-center register-h2">
+        <div class="col" *ngIf="!registered">
+          <h2 class="fw-bold mb-5" *ngIf="!id">Inserisci una nuova ricetta</h2>
+          <h2 class="fw-bold mb-5" *ngIf="id">Aggiorna ricetta</h2>
+          <form [formGroup]="ricettaForm" (ngSubmit)="register()">
+            <!-- 2 column grid layout with text inputs for recipe name and category -->
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <div class="form-outline">
+                  <label class="form-label" for="nome ">Nome della ricetta</label>
+                  <input type="text" id="nome" class="form-control mb-1" formControlName="nome"
+                    [ngClass]="{'form-control': true, 'is-valid': isValid('nome'), 'is-invalid': isInvalid('nome')}" />
+                  <div class="feedback text-start ps-3 mb-2">
+                    <span *ngIf="ricettaForm.controls['nome'].dirty"
+                      [ngClass]="{ 'valid': isValid('nome'), 'invalid': isInvalid('nome') }">{{msg.nome}}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <div class="form-outline">
+                  <div class="example-input">
+
+                    <nz-autocomplete #auto>
+                      <div *ngFor="let option of options">
+                        <nz-auto-option [nzValue]="option">{{option}}</nz-auto-option>
+                      </div>
+                    </nz-autocomplete>
+                  </div>
+                  <label class="form-label" for="categoria">Categoria</label>
+                  <input type="text" id="categoria" class="form-control mb-1"
+                    [ngClass]="{'form-control': true, 'is-valid': isValid('categoria'), 'is-invalid': isInvalid('categoria')}"
+                    nz-input formControlName="categoria" (input)="onInput($event)" [nzAutocomplete]="auto" />
+                  <div class="feedback text-start ps-3 mb-2 valid">
+                    <span *ngIf="ricettaForm.controls['categoria'].dirty"
+                      [ngClass]="{ 'valid': isValid('categoria'), 'invalid': isInvalid('categoria') }">{{msg.categoria}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ingredients textarea -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="ingredienti">Ingredienti (separati da virgola)</label>
+              <textarea id="ingredienti" placeholder="Ingrediente numero 1, ingrediente numero 2 ecc..."
+                class="form-control mb-1" formControlName="ingredienti"
+                [ngClass]="{'form-control': true, 'is-valid': isValid('ingredienti'), 'is-invalid': isInvalid('ingredienti')}"></textarea>
+              <div class="feedback text-start ps-3 mb-2 valid">
+                <span *ngIf="ricettaForm.controls['ingredienti'].dirty"
+                  [ngClass]="{ 'email': isValid('ingredienti'), 'invalid': isInvalid('ingredienti') }">{{msg.ingredienti}}</span>
+              </div>
+            </div>
+
+
+            <!-- Preparazione textarea -->
+            <div class="row">
+              <div class="form-outline mb-4">
+                <label class="form-label" for="preparazione">Preparazione</label>
+                <textarea type="preparazione" id="preparazione" class="form-control mb-1" formControlName="preparazione"
+                  [ngClass]="{'form-control': true, 'is-valid': isValid('preparazione'), 'is-invalid': isInvalid('preparazione')}"></textarea>
+                <div class="feedback text-start ps-3 mb-2 valid">
+                  <span *ngIf="ricettaForm.controls['preparazione'].dirty"
+                    [ngClass]="{ 'valid': isValid('preparazione'), 'invalid': isInvalid('preparazione') }">{{msg.preparazione}}</span>
+                </div>
+              </div>
+              <div class="form-outline mb-4 text-start">
+                <p class="mb-2">Vuoi rendere pubblica la ricetta (Tutti gli utenti del sito potranno vederla)?</p>
+                <div class="form-check ms-3">
+                  <input class="form-check-input" type="radio" formControlName="public" checked id="public-true"
+                    value="true">
+                  <label class="form-check-label" for="public-true">
+                    Sì
+                  </label>
+                </div>
+                <div class="form-check ms-3">
+                  <input class="form-check-input" type="radio" formControlName="public" id="public-false" value="false">
+                  <label class="form-check-label" for="public-false">
+                    No
+                  </label>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Submit button -->
+
+            <button *ngIf="!id" type="submit" class="btn btn-primary btn-block mb-4 btn-signup">
+              Crea ricetta
+            </button>
+            <button *ngIf="id" type="submit" class="btn btn-primary btn-block mb-4 btn-signup">
+              Aggiorna ricetta
+            </button>
+
+
+          </form>
+        </div>
+        <div class="col-lg-8" *ngIf="registered">
+          <h2 *ngIf="!id" class="fw-bold mb-5">La ricetta "{{newRecipeName}}" è stata aggiunta con successo!
+          </h2>
+          <h2 *ngIf="id" class="fw-bold mb-5">La ricetta "{{newRecipeName}}" è stata aggiornata con successo!
+          </h2>
+
+
+          <div><a (click)="newRecipe()" class="btn btn-primary btn-block btn-login mb-5">
+              Crea un'altra ricetta
+            </a>
+          </div>
+          <div>
+            <a routerLink="/my-profile" class="btn btn-primary btn-block btn-login">
+              Vai al profilo
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section: Design Block -->
+
         </div>
       </div>
 
