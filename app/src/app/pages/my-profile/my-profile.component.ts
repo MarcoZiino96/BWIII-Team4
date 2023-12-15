@@ -74,7 +74,7 @@ export class MyProfileComponent {
   }
 
   deleteById(id:number){
-    this.apiSvc.deleteById(id)?.subscribe(res => {
+    this.apiSvc.deleteById(id).subscribe(res => {
       const index:number = this.userArrRecipe.findIndex(r => {
         r.id === id
       })
