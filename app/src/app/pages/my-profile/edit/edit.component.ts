@@ -13,14 +13,29 @@ import { iRicetta } from '../../../Models/iricetta';
 })
 export class EditComponent {
 
+
   id!: number
-
-
   options!: string[]
-
   onceDirty: boolean = true
-
   currentRecipe!: iRicetta
+  color: string = ''
+  valid!: boolean
+  errorMsg!: any
+  msg!: any
+  unmatch: boolean = false
+  match: boolean = false
+  categories: string[] = []
+  user!: iAuthData
+  registered: boolean = false
+  newRecipeName!: string
+
+
+  constructor(
+    private fb: FormBuilder,
+    private authSvc: AuthService,
+    private apiSvc: APIricetteService,
+    private router: Router,
+    private route: ActivatedRoute){}
 
   onInput(event: Event): void {
     if (this.ricettaForm.controls['categoria'].value) {
@@ -38,25 +53,6 @@ export class EditComponent {
 
     }
   }
-
-
-
-
-
-
-
-
-  color: string = ''
-
-  valid!: boolean
-  errorMsg!: any
-
-  msg!: any
-
-  unmatch: boolean = false
-  match: boolean = false
-  categories: string[] = []
-  user!: iAuthData
 
   ricettaForm: FormGroup = this.fb.group({
     nome: this.fb.control(null, [Validators.required]),
@@ -105,7 +101,6 @@ export class EditComponent {
         }
       })
     })
-
   }
 
   ngDoCheck() {
@@ -129,18 +124,11 @@ export class EditComponent {
     }
   }
 
-  listOfOption: string[] = ['a10']
-  listOfSelectedValue = ['a10', 'c12']
-
-  options2: string[] = ['a', 'aa', 'aaa']
-
   newRecipe() {
     this.ricettaForm.reset()
     this.ricettaForm.controls['public'] = this.fb.control("true")
     this.registered = false
   }
-
-  registered: boolean = false
 
   setInvalidMessages(fieldName: string): string {
     const field: AbstractControl | null = this.ricettaForm.get(fieldName)
@@ -154,13 +142,6 @@ export class EditComponent {
     return errorMsg
   }
 
-  emailValidator(fieldName: string): boolean {
-    const field: AbstractControl | null = this.ricettaForm.get(fieldName)
-    //const regex = new RegExp()
-    //if (this.loginForm.value.email) return regex.test.(this.loginForm.value.email)
-    return false
-  }
-
   isValid(fieldName: string) {
     return this.ricettaForm.get(fieldName)?.valid && this.ricettaForm.get(fieldName)?.dirty
   }
@@ -169,9 +150,7 @@ export class EditComponent {
     return !this.ricettaForm.get(fieldName)?.valid && this.ricettaForm.get(fieldName)?.dirty
   }
 
-  newRecipeName!: string
-
-  register(): void {
+  submit(): void {
     if (this.ricettaForm.valid) {
 
       const ing = this.ricettaForm.controls['ingredienti'].value.split(',')
@@ -237,31 +216,6 @@ export class EditComponent {
       });
     }
   }
-
-
-
-
-  showModal1(): void {
-    this.isVisible1 = true
-  }
-
-  handleOk1(): void {
-    this.isVisible1 = false
-  }
-  isVisible1 = false
-  isVisible2 = false
-  showModal2(): void {
-    this.isVisible2 = true
-  }
-
-  handleOk2(): void {
-    this.isVisible2 = false
-  }
-  constructor(private fb: FormBuilder, private authSvc: AuthService, private apiSvc: APIricetteService,
-    private router: Router, private route: ActivatedRoute) { }
-
-
-
 
 }
 
