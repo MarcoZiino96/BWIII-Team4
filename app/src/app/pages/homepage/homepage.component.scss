@@ -62,3 +62,48 @@
 
 }
 
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  z-index: -100;
+}
+
+.custom-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.heroText {
+  position: absolute;
+  z-index: 9;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+
+  h1{
+
+    font-size: 7rem;
+
+  }
+
+}
+
+.p-fix{
+
+  font-family: 'Dancing Script', cursive;
+
+}
+
+.text-vid-container{
+
+  background-color: rgba(0, 0, 0, 0.468);
+  padding: 15px;
+
+}
