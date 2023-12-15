@@ -10,4 +10,5 @@ export interface iRicetta {
   immagine_primaria: string
   visibile: string
   public: boolean
+  userId: number
 }

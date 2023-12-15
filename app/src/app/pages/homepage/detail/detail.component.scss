@@ -1,3 +1,39 @@
 .imgCategoria{
-  width: 200px;
+  width: 700px;
+  height: 550px;
+}
+
+.res-page-text{
+
+  margin-left: -100px;
+
+}
+
+@media screen and (max-width:768px){
+
+  .imgCategoria{
+    width: 750px;
+    height: 500px;
+  }
+
+}
+
+@media screen and (max-width:1024px){
+
+  .res-page-text{
+
+    margin-left: 0px;
+
+  }
+
+}
+
+@media screen and (max-width:1400px){
+
+  .res-page-text{
+
+    margin-left: 0px;
+
+  }
+
 }

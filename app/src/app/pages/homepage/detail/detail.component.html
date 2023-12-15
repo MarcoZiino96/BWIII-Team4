@@ -1,25 +1,33 @@
-<div class="p-3">
-  <div>
-    <img class="imgCategoria" [src]="getImgByCategories(ricetta.categoria)" alt="Immagine ricetta">
-  </div>
+<!-- Page Content -->
+<div class="container">
 
+  <!-- Portfolio Item Heading -->
   <div>
-    <h4>{{ ricetta.nome }}</h4>
-
-    <ul>
+    <h2 class="my-4 fw-bold pt-4">{{ ricetta.nome }}</h2>
+    <ul class="mb-4">
       <li><i class="bi bi-bookmark"></i> Categoria: {{ ricetta.categoria }}</li>
       <li><i class="bi bi-person"></i> Persone: {{ ricetta.persone }}</li>
     </ul>
   </div>
-</div>
+  <!-- Portfolio Item Row -->
+  <div class="row">
 
-  <div>
-    <h5>Ingredienti</h5>
-    <ul *ngFor="let r of ricetta.ingredienti">
-      <li>{{ r }}</li>
-    </ul>
+    <div class="col-md-8">
+      <img class="imgCategoria img-fluid rounded-5" [src]="getImgByCategories(ricetta.categoria)" alt="Immagine ricetta">
+    </div>
+
+    <div class="col-md-4 res-page-text">
+      <h3 class="my-3">Preparazione</h3>
+      <p>{{ ricetta.preparazione }}</p>
+      <h3 class="my-3">Ingredienti</h3>
+      <ul *ngFor="let r of ricetta.ingredienti">
+        <li>{{ r }}</li>
+      </ul>
+    </div>
+
   </div>
+  <!-- /.row -->
 
-<div>
-  <p>{{ ricetta.preparazione }}</p>
+
 </div>
+<!-- /.container -->
